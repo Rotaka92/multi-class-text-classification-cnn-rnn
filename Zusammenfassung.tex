@@ -93,14 +93,14 @@ So könnten diese Analysen auch bei der Ergreifung von Verbrechern behilflich se
 
 Bereits seit den 20er-Jahren wird versucht, die Wahrscheinlichkeit der Rückfälligkeit von Tätern bei möglichen Bewährungsstrafen miteinzubeziehen und diese zu dadurch zu klassifizieren.
 Auch bei der Ermittlung eines angemessenen Straßmaßes wird diese Wahrscheinlichkeit in Betracht gezogen.
-Die daraus abzuleitende Hauptfrage der folgenden Arbeit wird es sein, inwiefern sich alte Methoden (bspw. \textit{logistische Regression}) durch neuartige (bspw. \textit{Random Forests}) ergänzen bzw. gänzlich ersetzen lassen.
+Die daraus abzuleitenden Hauptfragen der folgenden Arbeit wird es sein, inwiefern sich alte Methoden (bspw. \textit{logistische Regression}) durch neuartige (bspw. \textit{Random Forests}) ergänzen bzw. gänzlich ersetzen lassen, wie dies in der Realität evaluiert werden sollte und ob der Mensch überhaupt noch als Arbeitskraft benötigt wird.
 
-Auch um die Frage einer angemessenen Veranschaulichung des Modells wird es in der folgenden Arbeit gehen, da die Resultate für Personen mit Entscheidungsgewalt (\textit{Stakeholder}) so aufschlussreich wie möglich dargestellt werden sollten, um diesen die Legitimation ihrer Entscheidung zu vereinfachen.
-Dabei wird es zu Limitationen kommen, da sich durch maschinelle Lernmethoden häufig Umstände ergeben, die ein genaues Erfassen der Vorgehensweise dieser Methoden erschweren und so Rückschlüsse auf einzelne Variablen nur bedingt möglich sein werden, sodass die Vor- und Nachteile dieser neuartigen Methoden vor dem Hintergrund dieser Intransparenz kritisch aufgewogen werden müssen.\\
+Auch um die Frage einer angemessenen Veranschaulichung der Methodik wird es in der folgenden Arbeit gehen, da die Resultate für Stakeholder so aufschlussreich wie möglich dargestellt werden sollten, um diesen sowohl die Legitimation ihrer Entscheidung als auch die Evaluation dieser zu vereinfachen.
+Dabei wird es zu Limitationen kommen, da sich durch maschinelle Lernmethoden häufig Umstände ergeben, die ein genaues Erfassen der Vorgehensweise dieser Methoden erschweren und so Rückschlüsse auf einzelne Variablen nur bedingt möglich sein werden, sodass die Vor- und Nachteile dieser Methoden vor dem Hintergrund dieser Intransparenz kritisch aufgewogen werden müssen.\\
 
-Wichtige Angelegenheiten wie bspw. der Datenschutz und die damit einhergehende Wahrung der Privatsphäre müssen im Folgenden zusätzlich diskutiert werden, da es den Menschen Unbehagen bereitet, wenn mit ihren Daten nicht sorgfältig und anonym umgegangen wird. 
-Die Frage, was dabei rechtens ist und wie sich Gesetze im Bereich der Digitalisierung anpassen bzw. entwickeln sollten, um die perfekte Balance zwischen Persönlichkeitsrechten und öffentlicher Sicherheit zu finden, wird vom Autor ebenfalls berücksichtigt.
-So soll letztendlich mit dieser Arbeit dazu beigetragen werden, den Polizeiämtern im Hinblick auf begrenzte, personelle Ressourcen eine Hilfestellung bei der Distribution dieser Ressourcen zu geben. 
+Wichtige Angelegenheiten wie bspw. der Datenschutz und die damit einhergehende Wahrung der Privatsphäre müssen zusätzlich diskutiert werden, da es den Menschen Unbehagen bereitet, wenn mit ihren Daten nicht sorgfältig und anonym umgegangen wird. 
+Die daraus resultierende Frage, was dabei rechtens ist und wie sich Gesetze im Bereich der Digitalisierung anpassen bzw. entwickeln sollten, um die perfekte Balance zwischen Persönlichkeitsrechten und öffentlicher Sicherheit zu finden, wird somit vom Autor berücksichtigt.
+So soll letztendlich mit dieser Arbeit dazu beigetragen werden, den Polizeiämtern weltweit eine Hilfestellung bei der Allokation begrenzter Ressourcen zu geben. 
 Straftaten zu verhindern ist dabei in jeglicher Hinsicht kostengünstiger, als sie im Nachhinein aufzuklären.
 
 
@@ -108,13 +108,51 @@ Straftaten zu verhindern ist dabei in jeglicher Hinsicht kostengünstiger, als s
 \newpage
 \section{Einleitung}
 
+- im Groben: siehe Zusammenfassung 
+
+- Motivation des Themas und praktische/theoretische Relevanz
+
+- Facebook-Skandal mit Cambridge Analytica 
 
 
 
 \newpage
 \section{Grundlagen und Notwendigkeit}
 
+- Zahlen aus Kriminalstatistiken (Interpol, Europol, BKA, BfV, etc.) für die Notwendigkeit
 
+- hochkomplexe und umfangreiche Datenmengen, insbesondere durch Vernetzung der Ämter
+
+- welche Problemfelder können sowohl mit altbewährten als auch mit neuartigen Methoden angegangen werden (Perry, xv):
+
+--> Identify areas at increased risk, Identify geographic features that increase the risk of crime, Find a high risk of a violent outbreak between criminal group, Identify individuals who may become offenders,
+Identify suspects using a victim’s criminal history or other partial data (e.g., plate number, is it a serial perpetrator?, are there important person in the killers milieu? --> automatisiert durch vernetzte Datenbanken), locating serial killers anchor point
+
+
+- Taxonomy des Predictive Policing (aus Perry, S. xiv):
+
+--> Methods for predicting crime, Methods for predicting offenders, Methods for predicting perpetrators’ identities, Methods for predicting victims of crimes
+
+- Möglichkeiten, Erkenntnisse in Praxis umzusetzen? (bspw. mehr Polizeieinsatz an high-risk Orten (allgm.) oder andersartigen Polizeieinsatz(spezifisch) (Perry))
+
+- Software PredPol vorstellen, aber auch OpenSource-Software wie CrimeStat III
+
+- Googles Tensorflow zum Aufbau von Modellen aus dem Bereich der maschinellen Lernmethoden\\
+
+
+
+
+---- weitere Autoren/ Modelle: 
+
+- Berk (2013, Berechnung eines Rückfalls)
+- Chan (2015, Werden Social Scientisten von Big Data Analysten abgelöst?) 
+
+
+Forschungslücke: 
+
+- Inwiefern lassen sich alte Methoden durch neuartige ergänzen bzw. gänzlich ersetzen?
+
+- Wird der Mensch überhaupt noch als Arbeitskraft benötigt im Bereich Kriminalanalyse?
 
 \newpage
 \section{Maschinelle Lernmethoden zum Forecasting}
@@ -140,15 +178,15 @@ Straftaten zu verhindern ist dabei in jeglicher Hinsicht kostengünstiger, als s
 
 - sollten diese gleich behandelt werden bei Klassifikationen?
 
--> Betrachtung der Auswirkung einer Fehleinschätzung
+-> Betrachtung der Auswirkung einer Fehleinschätzung (Kosten eines Toten durch Mord schwer vergleichbar/ messbar)
 
--> wie könnte man Fehler unterschiedlich gewichten? Bestimmung der Cost Ratio (False Negatives versus False Positives)
+-> wie könnte man Fehler unterschiedlich gewichten? Bestimmung der Cost Ratio (False Negatives versus False Positives, Kosten eines unvorhergesagten Mordes wiegen schwerer als Kosten eines "zu lange Verurteilten")
 
 
 
 \subsection{Regression}
 
-- Neurales Netzwerk
+- Neuronales Netzwerk
 
 - allgemein: siehe Hastie, Perry
 
@@ -160,41 +198,56 @@ Straftaten zu verhindern ist dabei in jeglicher Hinsicht kostengünstiger, als s
 
 \subsubsection{Linearität und Nichtlinearität}
 
-- je mehr Nichtlinearität, desto genauer, jedoch Gefahr des Overfittings
+- je mehr Nichtlinearität, desto genauer für Trainingsdaten, jedoch Gefahr des Overfittings (Testdaten werden dann nicht mehr akkurat dargestellt)
 
 
 \newpage
 \subsection{Empirie}
 
-- Datensets: Kriminaldatensätze aus Kaggle (San Francisco, Chicago)
+- Datensets: Kriminaldatensätze aus Kaggle (San Francisco (878050x14), Chicago, Baltimore)
 
---> welche Variablen sind vorhanden? Sind diese relevant? Einschätzung!
+--> welche Variablen sind vorhanden? Sind diese relevant? Wie ist die Datenqualität? Fehlen viele (data censoring), sind sie systematisch verzerrt (systematic bias)?
 
 - Auswertungen mit Confusion Table bei Klassifikationsproblemen
 
-- sind Ergebnisse relevant (in absoluten Zahlen?) 
+- die drei verschiedenen Datensätze auf Unterschiede vergleichen und diese versuchen zu erklären, falls vorhanden (evtl. auch Erkenntnisse zusammenführen? Data Fusion?)
 
 
 \newpage
-\section{Diskussion, Limitationen und Rechtliches}
+\section{Diskussion, Limitationen, Empfehlungen und Rechtliches}
 
+- sind Ergebnisse durch Empirie relevant (in absoluten Zahlen?), besitzen also einen taktischen Nutzen oder wurde legidlich die Performance hochgeschraubt ohne wirklichen Mehrwert?
+
+--> Einschätzung, ob Einführung neuartiger Praktiken deutlichen Zuwachs mit sich bringen ggü. altbewährten Praktiken
+
+- Empfehlungen für Stakeholder aller Art (wie sollen Erkenntnisse aus der Empirie umgesetzt werden in die Praxis? Käufer, Verkäufer, Entwickler)
 
 - auf was sollte stets bei der Datenbeschaffung geachtet werden?
 
-- auf fragliche Paragrafen eingehen? oder zu rechtlich?
+- inwiefern sind Zivil- bzw. Privatsrechte bei den unterschiedlichen Methoden betroffen? 
 
-- auf neu geschaffenes 'Digitalministerium' eingehen
+- auf fragliche Paragrafen eingehen? oder zu rechtlich? 
 
-- Facebook-Skandal mit Cambridge Analytica (auch in Einleitung, um Aktualität hervorzuheben)
+- auf neu geschaffenes 'Digitalministerium' eingehen (Dorothee Bär als neue 'Digitalministerin') sowie Deutschlands Rolle insgesamt 
 
+--> aufpassen, dass es nicht zu weitläufig wird
 
+- Facebook-Skandal mit Cambridge Analytica
 
+- mit Mythen aufräumen, die weit verbreitet sind was PredPol angeht (Perry, xix)
+
+- wie wichtig ist der Einsatz eines Menschen überhaupt noch? Empfehlungen zur Zusammenarbeit zwischen Mensch und Maschine (Perry, xxiii) 
+
+- Wie ist der wissenschaftliche und praktische Beitrag zu bewerten?
 
 
 \newpage
 \section{Schluss}
 
+\section{Referenzen}
 
+\section{Anhang}
 
+\section{Ehrenwörtliche Erklärung der Abschlussarbeit}
 
 \end{document}

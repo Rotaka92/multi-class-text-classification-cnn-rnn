@@ -1,0 +1,1183 @@
+@charset "UTF-8";
+/* RRZN T3LUHTemplate
+   SASS/CSS Print 
+   typo3team@rrzn.uni-hannover.de
+ */
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+/*   box-model */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+* nested row
+* - nur innerhalb von col-Elementen zulässig (sinnvoll).
+*/
+.row .row, #header-print .row, #rootline-container .row, #main-content .row, #printfooter .row, .row #header-print, #header-print #header-print, #rootline-container #header-print, #main-content #header-print, #printfooter #header-print, .row #rootline-container, #header-print #rootline-container, #rootline-container #rootline-container, #main-content #rootline-container, #printfooter #rootline-container, .row #main-content, #header-print #main-content, #rootline-container #main-content, #main-content #main-content, #printfooter #main-content, .row #printfooter, #header-print #printfooter, #rootline-container #printfooter, #main-content #printfooter, #printfooter #printfooter {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: -10px; }
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16 {
+  float: left;
+  margin: 0;
+  padding: 0 10px;
+  min-height: 1px; }
+
+/* vollständige Zeile
+* - innerhalb von row zulässig, kann col-Elemente enthalten
+*/
+.grid-line {
+  /*
+  zoom: 1;
+  */
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+  .grid-line:before, .grid-line:after {
+    content: "";
+    display: table; }
+  .grid-line:after {
+    clear: both; }
+
+.col-1 {
+  width: 6.25%; }
+
+.col-2 {
+  width: 12.5%; }
+
+.col-3 {
+  width: 18.75%; }
+
+.col-4 {
+  width: 25%; }
+
+.col-5 {
+  width: 31.25%; }
+
+.col-6 {
+  width: 37.5%; }
+
+.col-7 {
+  width: 43.75%; }
+
+.col-8 {
+  width: 50%; }
+
+.col-9 {
+  width: 56.25%; }
+
+.col-10 {
+  width: 62.5%; }
+
+.col-11 {
+  width: 68.75%; }
+
+.col-12 {
+  width: 75%; }
+
+.col-13 {
+  width: 81.25%; }
+
+.col-14 {
+  width: 87.5%; }
+
+.col-15 {
+  width: 93.75%; }
+
+.col-16 {
+  width: 100%; }
+
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+#main-content #info-right {
+  /* CE News aus TSConfig */ }
+  #main-content #info-right .list.list_type-9 h1 a, #main-content #info-right .list.list_type-9 h2 a, #main-content #info-right .list.list_type-9 h3 a, #main-content #info-right .t3luhtemplate_newstsconfig h1 a, #main-content #info-right .t3luhtemplate_newstsconfig h2 a, #main-content #info-right .t3luhtemplate_newstsconfig h3 a {
+    text-decoration: none;
+    color: #808080;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 12px;
+    background-image: url(images/pfeil_rechts.gif); }
+  #main-content #info-right > .t3luhTS-ttcontent.t3luhtemplate_newstsconfig {
+    border: 0;
+    /*
+          h3 { 
+            a {
+               text-decoration: none;
+               color: #808080 ;
+               background-position: right center;
+               background-repeat: no-repeat;
+               padding-right: 12px; 
+               background-image: url(images/pfeil_rechts.gif);
+             }
+          }
+          */ }
+    #main-content #info-right > .t3luhTS-ttcontent.t3luhtemplate_newstsconfig .t3luhTS-ttcontent {
+      border: 1px solid #D1D1D1;
+      margin-bottom: 10px; }
+
+#main-content #content .news-list-browse, #main-content #info-right .news-list-browse {
+  margin: 20px 0px 8px 0px;
+  padding: 1px 5px 2px 6px;
+  color: #808080;
+  background-color: #fff;
+  border-top: 1px #D1D1D1 solid; }
+  #main-content #content .news-list-browse .showResultsWrap, #main-content #info-right .news-list-browse .showResultsWrap {
+    margin: 0 0 5px 0; }
+
+#main-content #content a.rssfeed, #main-content #info-right a.rssfeed {
+  background-image: url("images/rsslogo.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 20px; }
+
+#main-content #content .tt_news .newsLatestLinkImage, #main-content #info-right .tt_news .newsLatestLinkImage {
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+  background-image: url(images/pfeil_rechts.gif); }
+
+#main-content #content .tt_news.news-latest-archiv, #main-content #info-right .tt_news.news-latest-archiv {
+  border: solid 1px red; }
+
+#main-content #content .tt_news.latest-container .news-latest-item, #main-content #info-right .tt_news.latest-container .news-latest-item {
+  /*
+  zoom: 1;
+  */
+  margin-bottom: 4px; }
+  #main-content #content .tt_news.latest-container .news-latest-item:before, #main-content #content .tt_news.latest-container .news-latest-item:after, #main-content #info-right .tt_news.latest-container .news-latest-item:before, #main-content #info-right .tt_news.latest-container .news-latest-item:after {
+    content: "";
+    display: table; }
+  #main-content #content .tt_news.latest-container .news-latest-item:after, #main-content #info-right .tt_news.latest-container .news-latest-item:after {
+    clear: both; }
+  #main-content #content .tt_news.latest-container .news-latest-item p.news-latest-title, #main-content #info-right .tt_news.latest-container .news-latest-item p.news-latest-title {
+    margin-bottom: 0px; }
+  #main-content #content .tt_news.latest-container .news-latest-item p.news-latest-subheader, #main-content #info-right .tt_news.latest-container .news-latest-item p.news-latest-subheader {
+    margin-bottom: 0px; }
+    #main-content #content .tt_news.latest-container .news-latest-item p.news-latest-subheader a, #main-content #info-right .tt_news.latest-container .news-latest-item p.news-latest-subheader a {
+      color: #333333;
+      text-decoration: none; }
+
+#main-content #content .tt_news.list-container .news-list-item, #main-content #info-right .tt_news.list-container .news-list-item {
+  /*
+  zoom: 1;
+  */ }
+  #main-content #content .tt_news.list-container .news-list-item:before, #main-content #content .tt_news.list-container .news-list-item:after, #main-content #info-right .tt_news.list-container .news-list-item:before, #main-content #info-right .tt_news.list-container .news-list-item:after {
+    content: "";
+    display: table; }
+  #main-content #content .tt_news.list-container .news-list-item:after, #main-content #info-right .tt_news.list-container .news-list-item:after {
+    clear: both; }
+  #main-content #content .tt_news.list-container .news-list-item h2 a, #main-content #info-right .tt_news.list-container .news-list-item h2 a {
+    color: #3F3F3F;
+    text-decoration: none; }
+  #main-content #content .tt_news.list-container .news-list-item .news-list-subheader a, #main-content #info-right .tt_news.list-container .news-list-item .news-list-subheader a {
+    color: #333333;
+    text-decoration: none; }
+  #main-content #content .tt_news.list-container .news-list-item .news-list-date, #main-content #info-right .tt_news.list-container .news-list-item .news-list-date {
+    float: right; }
+
+#main-content #content .tt_news.single-container .news-single-header, #main-content #info-right .tt_news.single-container .news-single-header {
+  /*
+  zoom: 1;
+  */ }
+  #main-content #content .tt_news.single-container .news-single-header:before, #main-content #content .tt_news.single-container .news-single-header:after, #main-content #info-right .tt_news.single-container .news-single-header:before, #main-content #info-right .tt_news.single-container .news-single-header:after {
+    content: "";
+    display: table; }
+  #main-content #content .tt_news.single-container .news-single-header:after, #main-content #info-right .tt_news.single-container .news-single-header:after {
+    clear: both; }
+  #main-content #content .tt_news.single-container .news-single-header .news-single-image, #main-content #info-right .tt_news.single-container .news-single-header .news-single-image {
+    width: 40%;
+    float: left;
+    margin: 0 20px 0 8px; }
+  #main-content #content .tt_news.single-container .news-single-header .news-single-image-right, #main-content #info-right .tt_news.single-container .news-single-header .news-single-image-right {
+    width: 180px;
+    float: right;
+    margin: 0 8px 0 8px;
+    text-align: left; }
+  #main-content #content .tt_news.single-container .news-single-header .news-single-subheader, #main-content #info-right .tt_news.single-container .news-single-header .news-single-subheader {
+    font-weight: bold; }
+  #main-content #content .tt_news.single-container .news-single-header .news-single-content h1, #main-content #content .tt_news.single-container .news-single-header .news-single-content h2, #main-content #content .tt_news.single-container .news-single-header .news-single-content h3, #main-content #content .tt_news.single-container .news-single-header .news-single-content h4, #main-content #info-right .tt_news.single-container .news-single-header .news-single-content h1, #main-content #info-right .tt_news.single-container .news-single-header .news-single-content h2, #main-content #info-right .tt_news.single-container .news-single-header .news-single-content h3, #main-content #info-right .tt_news.single-container .news-single-header .news-single-content h4 {
+    overflow: hidden; }
+
+#main-content #content .tt_news.single-container .news-single-footer, #main-content #info-right .tt_news.single-container .news-single-footer {
+  /*
+  zoom: 1;
+  */ }
+  #main-content #content .tt_news.single-container .news-single-footer:before, #main-content #content .tt_news.single-container .news-single-footer:after, #main-content #info-right .tt_news.single-container .news-single-footer:before, #main-content #info-right .tt_news.single-container .news-single-footer:after {
+    content: "";
+    display: table; }
+  #main-content #content .tt_news.single-container .news-single-footer:after, #main-content #info-right .tt_news.single-container .news-single-footer:after {
+    clear: both; }
+  #main-content #content .tt_news.single-container .news-single-footer .date, #main-content #info-right .tt_news.single-container .news-single-footer .date {
+    float: right;
+    width: 50%; }
+    #main-content #content .tt_news.single-container .news-single-footer .date p, #main-content #info-right .tt_news.single-container .news-single-footer .date p {
+      text-align: right; }
+  #main-content #content .tt_news.single-container .news-single-footer .author, #main-content #info-right .tt_news.single-container .news-single-footer .author {
+    width: 50%;
+    float: left; }
+
+#main-content #content .tt_news.topnews-latest-container .topnews-latest-item, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item {
+  /*
+  zoom: 1;
+  */
+  border: 1px solid #cccccc;
+  margin: 6px 0 0 0;
+  overflow: hidden;
+  padding: 0 0 8px 0; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item:before, #main-content #content .tt_news.topnews-latest-container .topnews-latest-item:after, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item:before, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item:after {
+    content: "";
+    display: table; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item:after, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item:after {
+    clear: both; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item h2, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item h2 {
+    margin-top: 0px; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item .topnews-latest-item-image, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item .topnews-latest-item-image {
+    width: 26%; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item .topnews-latest-item-subheader a, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item .topnews-latest-item-subheader a {
+    color: #333333;
+    line-height: 1.44em;
+    text-decoration: none; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item.news1 .topnews-latest-item-image, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item.news1 .topnews-latest-item-image {
+    float: right;
+    margin: 0 8px 0 20px; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item.news1 .topnews-latest-item-subheader, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item.news1 .topnews-latest-item-subheader {
+    margin-left: 8px; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item.news2 .topnews-latest-item-image, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item.news2 .topnews-latest-item-image {
+    float: left;
+    margin: 0 20px 0 8px; }
+  #main-content #content .tt_news.topnews-latest-container .topnews-latest-item.news2 .topnews-latest-item-subheader, #main-content #info-right .tt_news.topnews-latest-container .topnews-latest-item.news2 .topnews-latest-item-subheader {
+    margin: 0 8px 0 8px; }
+
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+#main-content #sidebar #navigation {
+  margin-top: 25px;
+  padding-right: 0px !important; }
+  #main-content #sidebar #navigation ul {
+    padding: 0; }
+    #main-content #sidebar #navigation ul li {
+      overflow: hidden; }
+      #main-content #sidebar #navigation ul li a, #main-content #sidebar #navigation ul li .menuSpacer {
+        padding: 4px 0 4px 20px;
+        font-size: 100%;
+        line-height: 1.44em;
+        color: #666666;
+        display: block;
+        width: 100%; }
+        #main-content #sidebar #navigation ul li a:hover, #main-content #sidebar #navigation ul li .menuSpacer:hover {
+          background: #E1E1E1; }
+        #main-content #sidebar #navigation ul li a.flyout-toggle, #main-content #sidebar #navigation ul li .menuSpacer.flyout-toggle {
+          display: none; }
+      #main-content #sidebar #navigation ul li.menuActifsub > a, #main-content #sidebar #navigation ul li.menuCur > a, #main-content #sidebar #navigation ul li.menuCurifsub > a, #main-content #sidebar #navigation ul li.menuAct > a {
+        background-color: #E1E1E1;
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        border-top: 1px solid #D1D1D1; }
+      #main-content #sidebar #navigation ul li.menuAct > a {
+        font-weight: bold;
+        background-image: url(images/navi.gif); }
+      #main-content #sidebar #navigation ul li.menuCur > a, #main-content #sidebar #navigation ul li.menuCurifsub > a {
+        font-weight: bold;
+        background-image: url(images/navi.gif); }
+      #main-content #sidebar #navigation ul li.menuActifsub > a {
+        background-image: url(images/navi_act.gif); }
+      #main-content #sidebar #navigation ul li ul {
+        margin: 0 0 0 20px; }
+        #main-content #sidebar #navigation ul li ul li a {
+          border-top: 1px solid #D1D1D1; }
+        #main-content #sidebar #navigation ul li ul li ul {
+          margin: 0 0 0 15px; }
+      #main-content #sidebar #navigation ul li.menuIfSub ul {
+        display: none; }
+
+/* RRZN T3LUHTemplate
+   SASS/CSS Accordion
+   typo3team@rrzn.uni-hannover.de
+ */
+/*  Font-Groesse und Farben                                                                    */
+/* 12px */
+/** Farben Menue links                                                                          */
+/* Border unter Header-Bild                 */
+/* Farbe linke Menue-Spalte                 */
+/* Link zur LUH linke Spalte                */
+/* Hoehe Rootline unterhalb Header          */
+/* Hoehe der Fusszeile                      */
+/* Abstand Inhaltslemente mittlerer Bereich */
+/*  Werte fuer mobile-Version                                                                     */
+#main-content .tx_t3luhtemplate_accordion_toggle {
+  width: 120px;
+  margin: 0 0 6px 0; }
+  #main-content .tx_t3luhtemplate_accordion_toggle .flyoutAllText {
+    margin: 0px 0px 8px 8px; }
+
+#main-content .tx_t3luhtemplate_accordion, #main-content .tx_t3luhtemplate_accordion_print {
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-top: 0; }
+  #main-content .tx_t3luhtemplate_accordion .panel-body, #main-content .tx_t3luhtemplate_accordion_print .panel-body {
+    padding: 5px 5px 15px 0; }
+  #main-content .tx_t3luhtemplate_accordion > div.active > p a, #main-content .tx_t3luhtemplate_accordion_print > div.active > p a {
+    color: #333333; }
+  #main-content .tx_t3luhtemplate_accordion > div > p, #main-content .tx_t3luhtemplate_accordion_print > div > p {
+    margin: 0 0 0 0 !important;
+    border-top: 1px solid #d1d1d1;
+    background: #efefef;
+    position: relative; }
+    #main-content .tx_t3luhtemplate_accordion > div > p a, #main-content .tx_t3luhtemplate_accordion_print > div > p a {
+      margin-left: 1.248em;
+      display: block;
+      width: 95%;
+      color: #666666;
+      font-size: 1.04em;
+      line-height: 1.872em; }
+    #main-content .tx_t3luhtemplate_accordion > div > p a.toggle, #main-content .tx_t3luhtemplate_accordion_print > div > p a.toggle {
+      position: absolute;
+      left: -1.248em;
+      top: 0.2808em;
+      width: 2.08em;
+      height: 2.08em; }
+      #main-content .tx_t3luhtemplate_accordion > div > p a.toggle span, #main-content .tx_t3luhtemplate_accordion_print > div > p a.toggle span {
+        position: absolute;
+        left: 0.3em;
+        content: "";
+        display: block; }
+        #main-content .tx_t3luhtemplate_accordion > div > p a.toggle span.out, #main-content .tx_t3luhtemplate_accordion_print > div > p a.toggle span.out {
+          top: 15%;
+          /* Gesamtbreite Pfeil 2*border-width */
+          border-top: 0.416em solid transparent;
+          border-bottom: 0.416em solid transparent;
+          border-left: 0.416em solid #666666; }
+        #main-content .tx_t3luhtemplate_accordion > div > p a.toggle span.in, #main-content .tx_t3luhtemplate_accordion_print > div > p a.toggle span.in {
+          top: 25%;
+          border-left: 0.416em solid transparent;
+          border-right: 0.416em solid transparent;
+          border-top: 0.416em solid #333333;
+          display: none; }
+
+.row, #header-print, #rootline-container, #main-content, #printfooter {
+  /*
+  zoom: 1;
+  */
+  width: 538px;
+  min-width: 538px;
+  margin: 0 auto; }
+  .row:before, #header-print:before, #rootline-container:before, #main-content:before, #printfooter:before, .row:after, #header-print:after, #rootline-container:after, #main-content:after, #printfooter:after {
+    content: "";
+    display: table; }
+  .row:after, #header-print:after, #rootline-container:after, #main-content:after, #printfooter:after {
+    clear: both; }
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto; }
+
+.mobile {
+  display: none; }
+
+.screen {
+  display: none; }
+
+.print {
+  display: block; }
+
+.t3luh_editpanel {
+  display: none; }
+
+#page-wrapper .typo3-feedit-element {
+  outline: 0 !important;
+  outline-offset: 0; }
+
+#header-print {
+  /*
+  zoom: 1;
+  */
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.8em;
+  color: #333333; }
+  #header-print:before, #header-print:after {
+    content: "";
+    display: table; }
+  #header-print:after {
+    clear: both; }
+  #header-print p {
+    margin: 0 0 9px 0;
+    line-height: 1.44em;
+    color: #333333;
+    font-size: 100%;
+    padding-left: 5px; }
+  #header-print hr {
+    background-color: #D1D1D1;
+    border: none;
+    color: #D1D1D1;
+    height: 1px; }
+  #header-print b, #header-print strong {
+    font-weight: bold; }
+  #header-print i {
+    font-style: italic; }
+  #header-print sub, #header-print sup {
+    font-size: 80%; }
+  #header-print sub {
+    vertical-align: -10%; }
+  #header-print sup {
+    vertical-align: +30%; }
+  #header-print h1, #header-print h2, #header-print h3, #header-print h4, #header-print h5 {
+    font-weight: bold; }
+  #header-print h2, #header-print h3, #header-print h4, #header-print h5 {
+    font-size: 100%;
+    line-height: 1.44em; }
+  #header-print h1 {
+    font-size: 116.6666667%;
+    line-height: 1.44em;
+    background-color: #EFEFEF;
+    border-top: 1px solid #D1D1D1;
+    color: #3F3F3F;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-height: 2.2em;
+    padding: 1px 0 2px 5px;
+    border-left: 6px solid #3A6DAF; }
+  #header-print h2 {
+    background-color: #EFEFEF;
+    border-left: 1px solid #D1D1D1;
+    border-top: 1px solid #D1D1D1;
+    color: #808080;
+    margin: 20px 0 8px;
+    padding: 1px 0 1px 5px; }
+  #header-print h2.h2-first-class {
+    background: none;
+    border: none;
+    color: #333333; }
+  #header-print h3 {
+    margin: 20px 0px 8px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    background-color: #fff;
+    border-top: 1px #D1D1D1 solid; }
+  #header-print h4 {
+    margin: 20px 0px 0px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    width: auto; }
+  #header-print h5 {
+    color: #808080;
+    padding: 2px;
+    padding-left: 8px; }
+  #header-print a {
+    color: #4160A0;
+    text-decoration: none; }
+    #header-print a:hover {
+      text-decoration: underline; }
+    #header-print a.external-link, #header-print a.download, #header-print a.download-pdf, #header-print a.download-word, #header-print a.download-zip, #header-print a.download-powerpoint, #header-print a.download-excel {
+      background-position: right center;
+      background-repeat: no-repeat;
+      padding-right: 20px; }
+    #header-print a.external-link {
+      background-image: url("images/extern.gif"); }
+    #header-print a.download-word {
+      background-image: url("images/logo_word.gif"); }
+    #header-print a.download, #header-print a.download-pdf {
+      background-image: url("images/logo_pdf.gif"); }
+    #header-print a.download-zip {
+      background-image: url("images/logo_zip.gif"); }
+    #header-print a.download-powerpoint {
+      background-image: url("images/logo_powerpoint.gif"); }
+    #header-print a.download-excel {
+      background-image: url("images/logo_excel.gif"); }
+  #header-print .header-logos {
+    position: relative;
+    height: 70px; }
+    #header-print .header-logos .logo-1 {
+      position: absolute;
+      top: 15px;
+      right: 0; }
+    #header-print .header-logos .logo-2 {
+      position: absolute;
+      top: 15px;
+      left: 0; }
+      #header-print .header-logos .logo-2 img {
+        height: 29px;
+        width: auto; }
+    #header-print .header-logos .t3luhTS-logo2Text {
+      font-size: 17px;
+      color: #333333;
+      font-weight: bold; }
+      #header-print .header-logos .t3luhTS-logo2Text a {
+        color: #333333;
+        text-decoration: none; }
+
+#header-metamenu {
+  clear: both; }
+  #header-metamenu ul {
+    display: none; }
+
+#header-bottom {
+  display: none; }
+
+#rootline-container {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.8em;
+  color: #333333;
+  clear: both; }
+  #rootline-container p {
+    margin: 0 0 9px 0;
+    line-height: 1.44em;
+    color: #333333;
+    font-size: 100%;
+    padding-left: 5px; }
+  #rootline-container hr {
+    background-color: #D1D1D1;
+    border: none;
+    color: #D1D1D1;
+    height: 1px; }
+  #rootline-container b, #rootline-container strong {
+    font-weight: bold; }
+  #rootline-container i {
+    font-style: italic; }
+  #rootline-container sub, #rootline-container sup {
+    font-size: 80%; }
+  #rootline-container sub {
+    vertical-align: -10%; }
+  #rootline-container sup {
+    vertical-align: +30%; }
+  #rootline-container h1, #rootline-container h2, #rootline-container h3, #rootline-container h4, #rootline-container h5 {
+    font-weight: bold; }
+  #rootline-container h2, #rootline-container h3, #rootline-container h4, #rootline-container h5 {
+    font-size: 100%;
+    line-height: 1.44em; }
+  #rootline-container h1 {
+    font-size: 116.6666667%;
+    line-height: 1.44em;
+    background-color: #EFEFEF;
+    border-top: 1px solid #D1D1D1;
+    color: #3F3F3F;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-height: 2.2em;
+    padding: 1px 0 2px 5px;
+    border-left: 6px solid #3A6DAF; }
+  #rootline-container h2 {
+    background-color: #EFEFEF;
+    border-left: 1px solid #D1D1D1;
+    border-top: 1px solid #D1D1D1;
+    color: #808080;
+    margin: 20px 0 8px;
+    padding: 1px 0 1px 5px; }
+  #rootline-container h2.h2-first-class {
+    background: none;
+    border: none;
+    color: #333333; }
+  #rootline-container h3 {
+    margin: 20px 0px 8px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    background-color: #fff;
+    border-top: 1px #D1D1D1 solid; }
+  #rootline-container h4 {
+    margin: 20px 0px 0px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    width: auto; }
+  #rootline-container h5 {
+    color: #808080;
+    padding: 2px;
+    padding-left: 8px; }
+  #rootline-container a {
+    color: #4160A0;
+    text-decoration: none; }
+    #rootline-container a:hover {
+      text-decoration: underline; }
+    #rootline-container a.external-link, #rootline-container a.download, #rootline-container a.download-pdf, #rootline-container a.download-word, #rootline-container a.download-zip, #rootline-container a.download-powerpoint, #rootline-container a.download-excel {
+      background-position: right center;
+      background-repeat: no-repeat;
+      padding-right: 20px; }
+    #rootline-container a.external-link {
+      background-image: url("images/extern.gif"); }
+    #rootline-container a.download-word {
+      background-image: url("images/logo_word.gif"); }
+    #rootline-container a.download, #rootline-container a.download-pdf {
+      background-image: url("images/logo_pdf.gif"); }
+    #rootline-container a.download-zip {
+      background-image: url("images/logo_zip.gif"); }
+    #rootline-container a.download-powerpoint {
+      background-image: url("images/logo_powerpoint.gif"); }
+    #rootline-container a.download-excel {
+      background-image: url("images/logo_excel.gif"); }
+  #rootline-container #rootline-left, #rootline-container #rootline-right {
+    display: none; }
+
+#main-content #content {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.8em;
+  color: #333333;
+  /**
+  *  Tabellen
+  */
+  /*
+  *  Listen
+  */
+  /* Bilderunterschrift */
+  /*
+  *   CSS-Styles fuer krude Imperia-Anforderungen
+  *
+  */
+  /*
+  p.align-left {
+    text-align: left;
+  }
+  */ }
+  #main-content #content p {
+    margin: 0 0 9px 0;
+    line-height: 1.44em;
+    color: #333333;
+    font-size: 100%;
+    padding-left: 5px; }
+  #main-content #content hr {
+    background-color: #D1D1D1;
+    border: none;
+    color: #D1D1D1;
+    height: 1px; }
+  #main-content #content b, #main-content #content strong {
+    font-weight: bold; }
+  #main-content #content i {
+    font-style: italic; }
+  #main-content #content sub, #main-content #content sup {
+    font-size: 80%; }
+  #main-content #content sub {
+    vertical-align: -10%; }
+  #main-content #content sup {
+    vertical-align: +30%; }
+  #main-content #content h1, #main-content #content h2, #main-content #content h3, #main-content #content h4, #main-content #content h5 {
+    font-weight: bold; }
+  #main-content #content h2, #main-content #content h3, #main-content #content h4, #main-content #content h5 {
+    font-size: 100%;
+    line-height: 1.44em; }
+  #main-content #content h1 {
+    font-size: 116.6666667%;
+    line-height: 1.44em;
+    background-color: #EFEFEF;
+    border-top: 1px solid #D1D1D1;
+    color: #3F3F3F;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-height: 2.2em;
+    padding: 1px 0 2px 5px;
+    border-left: 6px solid #3A6DAF; }
+  #main-content #content h2 {
+    background-color: #EFEFEF;
+    border-left: 1px solid #D1D1D1;
+    border-top: 1px solid #D1D1D1;
+    color: #808080;
+    margin: 20px 0 8px;
+    padding: 1px 0 1px 5px; }
+  #main-content #content h2.h2-first-class {
+    background: none;
+    border: none;
+    color: #333333; }
+  #main-content #content h3 {
+    margin: 20px 0px 8px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    background-color: #fff;
+    border-top: 1px #D1D1D1 solid; }
+  #main-content #content h4 {
+    margin: 20px 0px 0px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    width: auto; }
+  #main-content #content h5 {
+    color: #808080;
+    padding: 2px;
+    padding-left: 8px; }
+  #main-content #content a {
+    color: #4160A0;
+    text-decoration: none; }
+    #main-content #content a:hover {
+      text-decoration: underline; }
+    #main-content #content a.external-link, #main-content #content a.download, #main-content #content a.download-pdf, #main-content #content a.download-word, #main-content #content a.download-zip, #main-content #content a.download-powerpoint, #main-content #content a.download-excel {
+      background-position: right center;
+      background-repeat: no-repeat;
+      padding-right: 20px; }
+    #main-content #content a.external-link {
+      background-image: url("images/extern.gif"); }
+    #main-content #content a.download-word {
+      background-image: url("images/logo_word.gif"); }
+    #main-content #content a.download, #main-content #content a.download-pdf {
+      background-image: url("images/logo_pdf.gif"); }
+    #main-content #content a.download-zip {
+      background-image: url("images/logo_zip.gif"); }
+    #main-content #content a.download-powerpoint {
+      background-image: url("images/logo_powerpoint.gif"); }
+    #main-content #content a.download-excel {
+      background-image: url("images/logo_excel.gif"); }
+  #main-content #content table {
+    width: 100%;
+    border-collapse: collapse; }
+    #main-content #content table thead tr th {
+      color: #333333;
+      text-align: center;
+      font-size: 100%;
+      line-height: 1.44em;
+      font-weight: bold;
+      vertical-align: top;
+      padding: 5px; }
+      #main-content #content table thead tr th.align-right {
+        text-align: right !important; }
+      #main-content #content table thead tr th.align-center {
+        text-align: center !important; }
+      #main-content #content table thead tr th.align-left {
+        text-align: left !important; }
+    #main-content #content table tbody tr td {
+      color: #333333;
+      font-size: 100%;
+      line-height: 1.44em;
+      font-weight: normal;
+      vertical-align: top;
+      padding: 5px; }
+      #main-content #content table tbody tr td.align-right {
+        text-align: right !important; }
+      #main-content #content table tbody tr td.align-center {
+        text-align: center !important; }
+      #main-content #content table tbody tr td.align-left {
+        text-align: left !important; }
+    #main-content #content table.table-layout-1 thead tr {
+      border: 0;
+      border: 1px solid #000000;
+      background: #EFEFEF; }
+      #main-content #content table.table-layout-1 thead tr th {
+        border: 0;
+        text-align: left; }
+    #main-content #content table.table-layout-1 tbody tr td {
+      border: 1px solid #000000;
+      vertical-align: top; }
+    #main-content #content table.table-layout-2 {
+      background: #ffffff;
+      border-collapse: collapse; }
+      #main-content #content table.table-layout-2 thead tr {
+        border: 0;
+        background: #EFEFEF; }
+        #main-content #content table.table-layout-2 thead tr th {
+          border: 0;
+          text-align: left; }
+      #main-content #content table.table-layout-2 tbody tr {
+        border: 0; }
+        #main-content #content table.table-layout-2 tbody tr td {
+          border: 0;
+          text-align: left;
+          vertical-align: top; }
+    #main-content #content table.table-layout-3 {
+      background: #ffffff;
+      border-collapse: collapse; }
+      #main-content #content table.table-layout-3 thead tr {
+        border-top: 1px solid #3A6DAF;
+        border-bottom: 1px solid #3A6DAF; }
+        #main-content #content table.table-layout-3 thead tr th {
+          text-align: left; }
+      #main-content #content table.table-layout-3 tbody tr {
+        border: 0; }
+        #main-content #content table.table-layout-3 tbody tr:nth-child(even) {
+          background: #EFEFEF; }
+    #main-content #content table.table-layout-4 {
+      background: #ffffff;
+      border: 1px solid #333333;
+      border-collapse: collapse; }
+      #main-content #content table.table-layout-4 thead tr {
+        border: 0;
+        background: #EFEFEF; }
+        #main-content #content table.table-layout-4 thead tr th {
+          border: 0;
+          text-align: left; }
+      #main-content #content table.table-layout-4 tbody tr {
+        border: 0; }
+        #main-content #content table.table-layout-4 tbody tr td {
+          border: 0;
+          text-align: left;
+          vertical-align: top; }
+    #main-content #content table.table-kompat-1 {
+      border: 1px solid #D1D1D1;
+      font-size: 90%; }
+      #main-content #content table.table-kompat-1 thead th td:first-child, #main-content #content table.table-kompat-1 thead th th:first-child, #main-content #content table.table-kompat-1 thead tr td:first-child, #main-content #content table.table-kompat-1 thead tr th:first-child, #main-content #content table.table-kompat-1 tbody th td:first-child, #main-content #content table.table-kompat-1 tbody th th:first-child, #main-content #content table.table-kompat-1 tbody tr td:first-child, #main-content #content table.table-kompat-1 tbody tr th:first-child {
+        background: #EFEFEF; }
+  #main-content #content ul, #main-content #content ol {
+    margin: 0 0 5px 23px; }
+    #main-content #content ul li, #main-content #content ol li {
+      font-size: 100%;
+      line-height: 1.44em;
+      color: #333333; }
+    #main-content #content ul ul li, #main-content #content ul ol li, #main-content #content ol ul li, #main-content #content ol ol li {
+      font-size: 100%;
+      line-height: 1.44em; }
+  #main-content #content ul {
+    list-style-image: url("images/list.gif"); }
+  #main-content #content ul.links, #main-content #content ul.Link-Liste, #main-content #content ul.csc-menu {
+    list-style-image: url("images/li.gif"); }
+  #main-content #content ul.Geordnete-Liste {
+    list-style: decimal; }
+  #main-content #content ol {
+    list-style: decimal; }
+  #main-content #content th p, #main-content #content td p {
+    font-size: 100%;
+    padding: 0; }
+  #main-content #content th ul li, #main-content #content td ul li {
+    font-size: 100%; }
+  #main-content #content .csc-textpic-caption {
+    margin: 4px 0 8px 0;
+    font-size: 90%; }
+  #main-content #content p.link {
+    background-image: url("images/li.gif");
+    background-repeat: no-repeat;
+    background-position: 5px 0px;
+    padding-left: 15px; }
+  #main-content #content span.kleiner, #main-content #content span.info, #main-content #content span.small {
+    font-size: 85%;
+    line-height: 1.44em; }
+  #main-content #content p.Quelltext {
+    font-family: monospace;
+    font-weight: normal;
+    /*
+	font-size: 12px;
+	line-height: 100%;
+    color: #333;
+    */
+    margin: 0 0 0 0; }
+  #main-content #content span.quelltext {
+    font-family: monospace;
+    font-weight: normal;
+    /*
+	font-size: 12px;
+	line-height: 100%;
+    color: #333;
+    */
+    margin: 0 0 0 0; }
+  #main-content #content span.info {
+    display: block;
+    padding: 4px 6px 2px; }
+  #main-content #content p.indent {
+    padding-left: 3em; }
+  #main-content #content p.fussnote {
+    margin-top: 32px !important;
+    border-top: 1px solid #D1D1D1;
+    padding-left: 6px;
+    font-size: 85% !important; }
+  #main-content #content p.align-center {
+    text-align: center; }
+  #main-content #content p.align-right {
+    text-align: right; }
+  #main-content #content .t3luhTS-textpic {
+    /*
+*  CSS aus plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE
+*  wird im Context #main-content > #content eingefuegt
+*  D.h. CSS_DEFAULT-STYLE gelten nur in "mittleren" CEs
+*/
+    /* Headers */
+    /* Clear floats after csc-textpic and after csc-textpic-imagerow */
+    /* Set padding for tables */
+    /* Settings for figure and figcaption (HTML5) */
+    /* Captions */
+    /* Float the columns */
+    /* Space below each image (also in-between rows) */
+    /* colSpace around image columns, except for last column */
+    /* Add margin from image-block to text (in case of "Text w/ images") */
+    /* Positioning of images: */
+    /* Center (above or below) */
+    /* Right (above or below) */
+    /* Left (above or below) */
+    /* Left (in text) */
+    /* Right (in text) */
+    /* Right (in text, no wrap around) */
+    /* Left (in text, no wrap around) */
+    /* Browser fixes: */
+    /* Fix for unordered and ordered list with image "In text, left" */
+    /* File Links */
+    /* Table background colors: */ }
+    #main-content #content .t3luhTS-textpic .csc-header-alignment-center {
+      text-align: center; }
+    #main-content #content .t3luhTS-textpic .csc-header-alignment-right {
+      text-align: right; }
+    #main-content #content .t3luhTS-textpic .csc-header-alignment-left {
+      text-align: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic, #main-content #content .t3luhTS-textpic div.csc-textpic div.csc-textpic-imagerow, #main-content #content .t3luhTS-textpic ul.csc-uploads li {
+      overflow: hidden; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap table {
+      border-collapse: collapse;
+      border-spacing: 0; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap table tr td {
+      padding: 0;
+      vertical-align: top; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap figure, #main-content #content .t3luhTS-textpic div.csc-textpic figure.csc-textpic-imagewrap {
+      margin: 0;
+      display: table; }
+    #main-content #content .t3luhTS-textpic figcaption.csc-textpic-caption {
+      display: table-caption; }
+    #main-content #content .t3luhTS-textpic .csc-textpic-caption {
+      text-align: left;
+      caption-side: bottom; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-caption-c .csc-textpic-caption, #main-content #content .t3luhTS-textpic .csc-textpic-imagewrap .csc-textpic-caption-c {
+      text-align: center; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-caption-r .csc-textpic-caption, #main-content #content .t3luhTS-textpic .csc-textpic-imagewrap .csc-textpic-caption-r {
+      text-align: right; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-caption-l .csc-textpic-caption, #main-content #content .t3luhTS-textpic .csc-textpic-imagewrap .csc-textpic-caption-l {
+      text-align: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic div.csc-textpic-imagecolumn {
+      float: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-imagewrap img {
+      border: 2px solid black;
+      padding: 0px 0px; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap img {
+      border: none;
+      display: block; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+      margin-bottom: 10px; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow-last .csc-textpic-image {
+      margin-bottom: 0; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-imagecolumn, #main-content #content .t3luhTS-textpic td.csc-textpic-imagecolumn .csc-textpic-image {
+      margin-right: 10px; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-imagecolumn.csc-textpic-lastcol, #main-content #content .t3luhTS-textpic td.csc-textpic-imagecolumn.csc-textpic-lastcol .csc-textpic-image {
+      margin-right: 0; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-left .csc-textpic-imagewrap, #main-content #content .t3luhTS-textpic div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+      margin-right: 10px;
+      /* margin-left: 35px;
+ */ }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-right .csc-textpic-imagewrap, #main-content #content .t3luhTS-textpic div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+      margin-left: 10px; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-center .csc-textpic-imagewrap, #main-content #content .t3luhTS-textpic div.csc-textpic-center figure.csc-textpic-imagewrap {
+      overflow: hidden; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-center .csc-textpic-center-outer {
+      position: relative;
+      float: right;
+      right: 50%; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-center .csc-textpic-center-inner {
+      position: relative;
+      float: right;
+      right: -50%; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-right .csc-textpic-imagewrap {
+      float: right; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-right div.csc-textpic-text {
+      clear: right; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-left .csc-textpic-imagewrap {
+      float: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-left div.csc-textpic-text {
+      clear: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-left .csc-textpic-imagewrap {
+      float: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-right .csc-textpic-imagewrap {
+      float: right; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+      float: right; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+      float: left; }
+    #main-content #content .t3luhTS-textpic div.csc-textpic div.csc-textpic-imagerow-last, #main-content #content .t3luhTS-textpic div.csc-textpic div.csc-textpic-imagerow-none div.csc-textpic-last {
+      margin-bottom: 0; }
+    #main-content #content .t3luhTS-textpic .csc-textpic-intext-left ol, #main-content #content .t3luhTS-textpic .csc-textpic-intext-left ul {
+      padding-left: 40px;
+      overflow: auto; }
+    #main-content #content .t3luhTS-textpic ul.csc-uploads {
+      padding: 0; }
+    #main-content #content .t3luhTS-textpic ul.csc-uploads li {
+      list-style: none outside none;
+      margin: 1em 0; }
+    #main-content #content .t3luhTS-textpic ul.csc-uploads img {
+      float: left;
+      padding-right: 1em;
+      vertical-align: top; }
+    #main-content #content .t3luhTS-textpic ul.csc-uploads span {
+      display: block; }
+    #main-content #content .t3luhTS-textpic ul.csc-uploads span.csc-uploads-fileName {
+      text-decoration: underline; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-1 {
+      background-color: #EDEBF1; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-2 {
+      background-color: #F5FFAA; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-240 {
+      background-color: black; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-241 {
+      background-color: white; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-242 {
+      background-color: #333333; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-243 {
+      background-color: gray; }
+    #main-content #content .t3luhTS-textpic table.contenttable-color-244 {
+      background-color: silver; }
+  #main-content #content > .t3luhTS-ttcontent:first-child h1 {
+    font-size: 116.6666667%;
+    line-height: 1.44em;
+    background-color: #EFEFEF;
+    border-top: 1px solid #D1D1D1;
+    color: #3F3F3F;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-height: 2.2em;
+    padding: 1px 0 2px 5px;
+    border-left: 6px solid #3A6DAF; }
+  #main-content #content > .t3luhTS-ttcontent .csc-textpic-text {
+    /* erste h2 in text mit Bild */ }
+    #main-content #content > .t3luhTS-ttcontent .csc-textpic-text h2:first-child {
+      margin-top: 0; }
+
+#main-content aside {
+  display: none; }
+
+.typo3-adminPanel, .typo3-editPanel, .frontEndEditIconLinks {
+  display: none; }
+
+#printfooter {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.8em;
+  color: #333333;
+  margin: 10px auto;
+  border-top: 1px solid #D1D1D1; }
+  #printfooter p {
+    margin: 0 0 9px 0;
+    line-height: 1.44em;
+    color: #333333;
+    font-size: 100%;
+    padding-left: 5px; }
+  #printfooter hr {
+    background-color: #D1D1D1;
+    border: none;
+    color: #D1D1D1;
+    height: 1px; }
+  #printfooter b, #printfooter strong {
+    font-weight: bold; }
+  #printfooter i {
+    font-style: italic; }
+  #printfooter sub, #printfooter sup {
+    font-size: 80%; }
+  #printfooter sub {
+    vertical-align: -10%; }
+  #printfooter sup {
+    vertical-align: +30%; }
+  #printfooter h1, #printfooter h2, #printfooter h3, #printfooter h4, #printfooter h5 {
+    font-weight: bold; }
+  #printfooter h2, #printfooter h3, #printfooter h4, #printfooter h5 {
+    font-size: 100%;
+    line-height: 1.44em; }
+  #printfooter h1 {
+    font-size: 116.6666667%;
+    line-height: 1.44em;
+    background-color: #EFEFEF;
+    border-top: 1px solid #D1D1D1;
+    color: #3F3F3F;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-height: 2.2em;
+    padding: 1px 0 2px 5px;
+    border-left: 6px solid #3A6DAF; }
+  #printfooter h2 {
+    background-color: #EFEFEF;
+    border-left: 1px solid #D1D1D1;
+    border-top: 1px solid #D1D1D1;
+    color: #808080;
+    margin: 20px 0 8px;
+    padding: 1px 0 1px 5px; }
+  #printfooter h2.h2-first-class {
+    background: none;
+    border: none;
+    color: #333333; }
+  #printfooter h3 {
+    margin: 20px 0px 8px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    background-color: #fff;
+    border-top: 1px #D1D1D1 solid; }
+  #printfooter h4 {
+    margin: 20px 0px 0px 0px;
+    padding: 1px 5px 2px 6px;
+    color: #808080;
+    width: auto; }
+  #printfooter h5 {
+    color: #808080;
+    padding: 2px;
+    padding-left: 8px; }
+  #printfooter a {
+    color: #4160A0;
+    text-decoration: none; }
+    #printfooter a:hover {
+      text-decoration: underline; }
+    #printfooter a.external-link, #printfooter a.download, #printfooter a.download-pdf, #printfooter a.download-word, #printfooter a.download-zip, #printfooter a.download-powerpoint, #printfooter a.download-excel {
+      background-position: right center;
+      background-repeat: no-repeat;
+      padding-right: 20px; }
+    #printfooter a.external-link {
+      background-image: url("images/extern.gif"); }
+    #printfooter a.download-word {
+      background-image: url("images/logo_word.gif"); }
+    #printfooter a.download, #printfooter a.download-pdf {
+      background-image: url("images/logo_pdf.gif"); }
+    #printfooter a.download-zip {
+      background-image: url("images/logo_zip.gif"); }
+    #printfooter a.download-powerpoint {
+      background-image: url("images/logo_powerpoint.gif"); }
+    #printfooter a.download-excel {
+      background-image: url("images/logo_excel.gif"); }
+  #printfooter ul {
+    margin: 6px 0 12px 0; }
+    #printfooter ul li {
+      font-style: italic;
+      padding: 0 0 0 5px; }
+
+#footer-info, #footer-main {
+  display: none; }
+
+.typo3-adminPanel, .typo3-editPanel, .frontEndEditIconLinks {
+  display: none; }

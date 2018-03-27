@@ -1,0 +1,325 @@
+/*
+*  jQuery t3luhtemplate
+*  TYPO3 Team RRZN
+ */
+
+var count=0;
+
+
+$(document).ready(function() {
+
+    /* Hintergrundfarbe linke Spalte (Menue) 
+     * wird regelmaessig gesetzt, um auf dyn. Inhalte zu reagieren
+     * */
+    setLeftSitebarColor();    
+    setInterval('setLeftSitebarColor()', 1000);
+
+    /*==================================================================================================*/
+
+   /* 
+    $('.t3luhtemplate-printbutton').click(function() { 
+    	window.print();
+    });
+*/
+    /*
+     Sitemap und Zielgruppenmenü ausschalten
+     */
+
+    $("#mobileMainSitemap").css("display","none");
+    $("#mobileZielgruppen").css("display","none");
+
+
+
+
+    $(".menuButton").click(function(){
+        if ( $(".searchButton").hasClass('searchForm_active')){
+            $(".searchButton").removeClass('searchForm_active');
+            $("#mobileSearchForm").fadeOut(200);
+        }
+        if ( $(".zgButton").hasClass('mobileZielgruppen_active')){
+            $(".zgButton").removeClass('mobileZielgruppen_active');
+            $("#mobileZielgruppen").fadeOut(800);
+        }
+        if ( $(".menuButton").hasClass('mobileSitemap_active')){
+            $(".menuButton").removeClass('mobileSitemap_active');
+            $("#mobileMainSitemap").fadeOut(800);
+        }else {
+            $("#mobileMainSitemap").fadeIn(800);
+            $(".menuButton").addClass('mobileSitemap_active');
+        }
+    });
+
+    $(".zgButton").click(function(){
+        if ( $(".searchButton").hasClass('searchForm_active')){
+            $(".searchButton").removeClass('searchForm_active');
+            $("#mobileSearchForm").fadeOut(200);
+        }
+        if ( $(".menuButton").hasClass('mobileSitemap_active')){
+            $(".menuButton").removeClass('mobileSitemap_active');
+            $("#mobileMainSitemap").fadeOut(200);
+        }
+        if ( $(".zgButton").hasClass('mobileZielgruppen_active')){
+            $(".zgButton").removeClass('mobileZielgruppen_active');
+            $("#mobileZielgruppen").fadeOut(800);
+        }else {
+            $("#mobileZielgruppen").fadeIn(800);
+            $(".zgButton").addClass('mobileZielgruppen_active');
+        }
+    });
+
+
+
+    $("#mobileSearchForm").css("display","none");
+
+
+    $(".searchButton").click(function(){
+        if ( $(".menuButton").hasClass('mobileSitemap_active')){
+            $(".menuButton").removeClass('mobileSitemap_active');
+            $("#mobileMainSitemap").fadeOut(800);
+        }
+        if ( $(".zgButton").hasClass('mobileZielgruppen_active')){
+            $(".zgButton").removeClass('mobileZielgruppen_active');
+            $("#mobileZielgruppen").fadeOut(800);
+        }
+
+        if ( $(".searchButton").hasClass('searchForm_active')){
+            $(".searchButton").removeClass('searchForm_active');
+            $("#mobileSearchForm").fadeOut(200);
+        }else {
+            $("#mobileSearchForm").fadeIn(200);
+            $(".searchButton").addClass('searchForm_active');
+        }
+    });
+
+    /* Flyout mobile Sitemap
+     *
+     *
+     * werden Unterseiten aufgerufen, werden der zugehörige Menü-Bereich mittels CSS ausgeklappt
+     * Die Flyout-Toggles müssen entsprechend als ausgeklappt (class flyout) gekennzeichnet werden
+     */
+    $("#mobileMainSitemap > .t3luhTS-mobileSitemap > ul > li.menuActifsub   a.flyout-toggle").addClass('flyout');
+
+    $("#mobileMainSitemap > .t3luhTS-mobileSitemap >  ul > li > a.flyout-toggle").click(function(e) {
+
+        e.preventDefault();
+        // $(this).parent().children('ul').slideDown(200);
+        // $(this).addClass('flyout');
+
+
+        $('.t3luhTS-mobileSitemap > ul >li > ul').slideUp(200);
+
+        $('.t3luhTS-mobileSitemap > ul >li > ul > li > a.flyout-toggle').not(this).removeClass('flyout');
+
+        if($(this).hasClass('flyout')){
+            $(this).parent().children('ul').slideUp(200);
+
+
+            $(this).removeClass('flyout');
+        }else {
+            $(this).addClass('flyout');
+            $(this).parent().children('ul').slideDown(200);
+
+        }
+
+    });
+    $("#mobileMainSitemap > .t3luhTS-mobileSitemap > ul > li >  ul > li > a.flyout-toggle").click(function(e) {
+
+        e.preventDefault();
+        /*
+         $(this).parent().children('ul').slideDown(200);
+         $(this).addClass('flyout');
+         */
+        $('.t3luhTS-mobileSitemap > ul >li > ul > li > ul').slideUp(200);
+
+        $('.t3luhTS-mobileSitemap > ul >li > ul > li > a.flyout-toggle').not(this).removeClass('flyout');
+
+        if($(this).hasClass('flyout')){
+            $(this).parent().children('ul').slideUp(200);
+            $(this).removeClass('flyout');
+        }else {
+            $(this).addClass('flyout');
+            $(this).parent().children('ul').slideDown(200);
+        }
+
+    });
+
+
+
+    /*==================================================================================================*/
+
+    
+
+    /***************************************************************************************************
+     *
+     * Flyout der Sitemap  
+     *
+     *
+     */
+
+    $(".mainSitemap li a.flyout-toggle span").html("+");
+
+    $(".mainSitemap li a.flyout-toggle").click(function(e) {
+        e.preventDefault();
+        if($(this).hasClass('flyout')){
+            $(this).children("span").html("+");
+            // $(this).parent().children('ul').slideUp(500);
+            $(this).parent().children('ul').css('display',"none");
+            $(this).removeClass('flyout');
+
+        }else {
+            $(this).children("span").html("-");
+            $(this).addClass('flyout');
+            //  $(this).parent().children('ul').slideDown(500);
+            $(this).parent().children('ul').css('display',"block");
+
+        }
+        setTimeout(function(){
+                setLeftSitebarColor();
+            },
+            100
+        );
+
+    });
+
+    $(".mainSitemap .flyoutAll").click(function(e){
+
+        if($(this).hasClass("flyout")){
+            //  $('.mainSitemap ul ul').slideUp(1500);
+            $('.mainSitemap ul ul').css('display',"none");
+            $(this).removeClass("flyout");
+            $(".mainSitemap li a.flyout-toggle").removeClass("flyout");
+            $(".mainSitemap li a.flyout-toggle span").html("+");
+            $(this).children("span").html('Sitemap ausklappen');
+            $(this).children("img").attr('src','typo3conf/ext/t3luhtemplate/Resources/Public/css/images/exp-on.gif');
+
+
+        }else{
+            //  $('.mainSitemap ul ul ').slideDown(1500);
+            $('.mainSitemap ul ul').css('display',"block");
+            $(".mainSitemap li a.flyout-toggle span").html("-");
+            $(this).addClass("flyout");
+            $(".mainSitemap li a.flyout-toggle").addClass("flyout");
+            $(this).children("span").html('Sitemap einklappen');
+            $(this).children("img").attr('src','typo3conf/ext/t3luhtemplate/Resources/Public/css/images/exp-off.gif');
+
+
+
+        }
+        setTimeout(function(){
+                setLeftSitebarColor();
+            },
+            100
+        );
+    });
+    /****************************************************************************************************/
+
+
+    /*
+     * Accordion
+     */
+    /* alle Accordion-Inhalte zu  */
+    
+    $('.tx_t3luhtemplate_accordion > div').find('div').hide();  
+    $('.tx_t3luhtemplate_accordion > div:first-child').addClass('active'); 
+    $('.tx_t3luhtemplate_accordion > div:first-child > div').slideDown();
+    toggleAccordionButton();
+    
+	$('.tx_t3luhtemplate_accordion > div > p').click(function() { 
+		$panel =  $(this).parent(); 
+		var accordionStyle = $panel.parent().attr("accordionStyle");
+		$accordionDivs = $panel.parent().children(); 
+		if(accordionStyle=='1'){
+		    if($panel.hasClass('active')){
+	           $panel.removeClass('active'); 
+	           $(this).next().slideUp();
+	         }else{ 
+	           $(this).next().slideDown();
+	           $(this).parent().addClass('active'); 
+	         } 
+		     
+		}
+		else {
+			if($panel.hasClass('active')){
+				$panel.removeClass('active'); 
+		        $(this).next().slideUp();
+			} 
+			else {
+				  $(this).next().slideDown();
+		           $(this).parent().addClass('active'); 
+			}
+			$accordionDivs.not($panel).find('div').slideUp();
+			$accordionDivs.not($panel).removeClass('active'); 
+		}
+		toggleAccordionButton();
+	    return false;  
+	  });
+     
+	
+	$('.tx_t3luhtemplate_accordion_toggle').click(function(e){
+		
+		$accordionDivs=$(this).next(".tx_t3luhtemplate_accordion").children();
+		if($(this).hasClass("accordionFlyout")) { /* zuklappen */ 
+			$(this).removeClass("accordionFlyout");
+			$accordionDivs.removeClass('active');
+			$accordionDivs.find('div').slideUp(); 
+			toggleAccordionButton(); 
+			$(this).children("span").html('Ausklappen');
+			$(this).children("img").attr('src','typo3conf/ext/t3luhtemplate/Resources/Public/css/images/exp-on.gif');
+		}
+		
+		else { /* aufklappen */ 
+			$accordionDivs.removeClass('active');
+			$accordionDivs.find('div').slideDown();  
+			$accordionDivs.addClass('active');
+			$(this).addClass("accordionFlyout");
+			$(this).children("span").html('Einklappen');
+			$(this).children("img").attr('src','typo3conf/ext/t3luhtemplate/Resources/Public/css/images/exp-off.gif');
+			toggleAccordionButton(); 
+		}
+	
+	});
+	
+	/* Image Hack
+	 * 
+	 */
+	  
+	$('.ttcontent-layout-3').find('img').each(function() {
+	    //Do your work   
+		w = $(this).attr("width");
+		h = $(this).attr("height");
+		$( this ).wrap('<div class="fixedimage" style="width:'+w+'px; height:'+h+'px;"></div>');
+	})
+		
+});
+
+ 
+
+
+
+function toggleAccordionButton(){ 
+	$('.tx_t3luhtemplate_accordion').find('span.out').css("display","block");
+	$('.tx_t3luhtemplate_accordion').find('span.in').css("display","none"); 
+	$('.tx_t3luhtemplate_accordion').find('.active').find('span.out').css("display","none");
+	$('.tx_t3luhtemplate_accordion').find('.active').find('span.in').css("display","block"); 
+}
+
+
+/*
+ *  linke Spalte erhaelt max. Hoehe fuer Hintergrundfarbe
+ *
+ */
+
+function setLeftSitebarColor() {
+    ++count;
+
+    var leftHeight=$("#homelink").height()+$("#navigation").height()+$("#luhlink").height()+175;
+    var contentHeight=$('#content').height();
+
+    var sidebarRightHeight=$("#info-right").height();
+    var maxHeight=Math.max(sidebarRightHeight,leftHeight,contentHeight);
+
+      $("#sidebar").css("height",maxHeight);
+    // $("#sidebar").css("height",'+=20');
+    //  $("#t3luhDebug").html('left '+count+' '+contentHeight+' '+leftHeight);
+
+}
