@@ -84,7 +84,7 @@
       <file>Zusammenfassung-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>Literatur2.bib</file>
+      <file>bla.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.19)  26 MAR 2018 21:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.19)  30 MAR 2018 11:16
 entering extended mode
 **./Zusammenfassung.tex
 (Zusammenfassung.tex
@@ -998,35 +998,109 @@ No file Zusammenfassung.bbl.
 Package biblatex Info: Reference section=0 on input line 87.
 Package biblatex Info: Reference segment=0 on input line 87.
 \c@lstlisting=\count306
+(Zusammenfassung.toc
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+("C:\Users\Robin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd
+"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 9.
+
+
+("C:\Users\Robin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd
+"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 9.
+
+
+("C:\Users\Robin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd
+"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 9.
+
+
+("C:\Users\Robin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd
+"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 9.
+ ("C:\Users\Robin\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+)
+\tf@toc=\write5
+\openout5 = `Zusammenfassung.toc'.
+
+ [1
+
+{C:/Users/Robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 
  []
 
-[1
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
-{C:/Users/Robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-[3] [4] [5] [6] [7] (Zusammenfassung.aux)
+ []
+
+
+Overfull \hbox (32.72987pt too wide) in paragraph at lines 170--171
+[]\T1/bch/m/n/12 - füh-ren-de Soft-wa-re Pred-Pol vor-stel-len, auch Pre-Cobs, 
+ES-RIs Ar-c-GIS, SPSS Mo-del-ler OpenSource-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+
+ []
+
+[6] [7]
+Overfull \hbox (15.90758pt too wide) in paragraph at lines 272--273
+\T1/bch/m/n/12 - Kri-mi-nal-da-ten-sät-ze aus Kag-gle (San Fran-cis-co (878050x
+14; 2003-2015), Chi-ca-go (>6Mx17;
+ []
+
+[8] [9] [10] [11] (Zusammenfassung.aux)
 Package logreq Info: Writing requests to 'Zusammenfassung.run.xml'.
 \openout1 = `Zusammenfassung.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13097 strings out of 493312
- 213696 string characters out of 3129826
- 482992 words of memory out of 3000000
- 16458 multiletter control sequences out of 15000+200000
- 23262 words of font info for 28 fonts, out of 3000000 for 9000
+ 13184 strings out of 493312
+ 215458 string characters out of 3129826
+ 484978 words of memory out of 3000000
+ 16521 multiletter control sequences out of 15000+200000
+ 31392 words of font info for 46 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
- 36i,4n,38p,806b,1566s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,5n,38p,806b,1692s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bitstrea/charter
 /bchb8a.pfb><C:/Users/Robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bitst
 rea/charter/bchr8a.pfb><C:/Users/Robin/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/bitstrea/charter/bchri8a.pfb>
-Output written on Zusammenfassung.pdf (7 pages, 54099 bytes).
+Output written on Zusammenfassung.pdf (11 pages, 66405 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

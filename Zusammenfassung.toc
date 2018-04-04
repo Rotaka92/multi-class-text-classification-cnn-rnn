@@ -1,0 +1,67 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {ngerman}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Grundlagen und Notwendigkeit}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Zahlen aus Kriminalstatistiken}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}M\IeC {\"o}gliche Problemfelder der Kriminologie}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Predictive Policing}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4}Googles Tensorflow}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.4.1}Integration in Python}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Forschungsl\IeC {\"u}cke}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Maschinelle Lernmethoden zum Forecasting}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Altbew\IeC {\"a}hrte Methoden}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}Crime Mapping}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Neuartige Methoden des maschinellen Lernens}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.1}Random Forest}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.2}Konvolutionales Neuronales Netzwerk }{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.3}Weitere maschinelle Lernmethoden}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Linearit\IeC {\"a}t und Nichtlinearit\IeC {\"a}t}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Behandlung der Forecast-Errors}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Empirie/ quantitative Auswertungen}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Datensets}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Auswertungen}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Unterschiedliche Resultate in Datensets}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Diskussion, Limitationen und Empfehlungen}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Evaluation und Relevanz}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Umsetzung in die Praxis}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Politik und Recht}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.1}Datenbeschaffung}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.2}Zivil- bzw. Privatsrechte}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.3.3}Deutschlands Rolle in der Digitalisierung}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Ausblick}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Fazit}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Anhang}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Ehrenw\IeC {\"o}rtliche Erkl\IeC {\"a}rung der Abschlussarbeit}{11}
