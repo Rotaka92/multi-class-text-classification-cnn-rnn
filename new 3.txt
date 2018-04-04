@@ -1,0 +1,292 @@
+
+\documentclass[a4paper,12pt,parskip,bibtotoc,liststotoc]{article}
+    %Festlegung der Dokumentenklasse, zahlreiche Vereinbarungen über Layout, Gliederungsstrukturen,
+    %bsp. article -> section, subsection..., book -> chapter, section...
+    %parskip = Abstand zwischen Absätzen, Veränderung durch \setlength
+
+\usepackage[ngerman]{babel}     %Neue deutsche Rechtschreibung, Umlaute können geschrieben werden
+\usepackage[utf8]{inputenc}     %direkte Angabe von Umlauten
+\usepackage[T1]{fontenc}        %Silbentrennung bei Sonderzeichen
+\usepackage{setspace}           %für Zeilenabstand
+\usepackage[notindex,nottoc]{tocbibind}   %Inhaltsverzeichnisse erstellen
+
+
+\usepackage{mathptmx,charter,courier} % Für schöne Schriften
+\usepackage[scaled]{helvet}     		%Serifenlose Schrift wird in Helvetica geschrieben
+\usepackage{calligra}    				%Calligra Schriftart
+\usepackage{eufrak}      				%mathematische Symbole
+
+
+%zusätzliche benötigte Pakete
+\usepackage{graphicx}           %Graphik
+\usepackage{amsmath}    		%Mathematik
+\usepackage{natbib}             %Zitate
+\usepackage{marvosym}           %enthält Symbole wie das Eurozeichen
+\usepackage{eurosym}
+
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+
+
+\usepackage{mdwlist}   			%Verringerung Abstand zwischen items -> \begin{itemize*} \end{itemize*}
+\usepackage[labelsep=space,justification=centering]{caption} % Abbilungd-/Tabellen Über-/Unterschriften
+
+%\usepackage{hyperref}  		%erlaubt Links innerhalb des pdf-Dokuments zu erzeugen
+
+\setlength{\parindent}{0pt}     %Verhinderung des horizontalen Einrückens zu Beginn eines Absatzes
+
+%Seitenlayout
+\topmargin -0.9cm       %Vertikaler Abstand der Kopfzeile von der Bezugslinie
+\textheight 25cm        %Abstand der Grundlinie der Kopfzeile zum Haupttext
+\textwidth 16.5cm       %Breite des Haupttexts
+\footskip 1cm           %Abstand der Grundlinien der letzten Textzeile und der Fußzeile
+\voffset -0.5cm         %Vertikale Bezugspunktposition
+\hoffset -1.2cm         %Horizontale Bezugspunktposition
+
+\onehalfspacing         %anderthalbzeiliger Abstand
+
+\newcommand{\url}{\;}   %URL im Literaturverzeichnis
+
+%eigene Befehlsdefinitionen
+\newcommand{\be}{\begin{equation}}     %Mathematische Umgebung
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bean}{\begin{eqnarray*}}  %ohne Nummerierung
+\newcommand{\eean}{\end{eqnarray*}}    %ohne Nummerierung
+
+%%%%%%%%% ACHTUNG, HIER NEU HINZUGEFÜGTE PACKAGES%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\usepackage{titlesec} %weitere subsubsubsection
+
+\usepackage{natbib}
+\let\bibhang\relax
+\let\citename\relax
+\let\bibfont\relax
+\let\Citeauthor\relax
+\expandafter\let\csname ver@natbib.sty\endcsname\relax
+\usepackage[backend = bibtex, style = authoryear, doi = false, date = long, isbn = false]{biblatex}
+
+\addbibresource{Literatur2.bib}
+
+
+
+\usepackage{listings}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section{Zusammenfassung}
+
+In der folgenden Masterarbeit dreht es sich um die Frage, inwiefern sich die Digitalisierung allgemein auf konventielle Berufe und im Speziellen auf den Beruf des Kriminalanalysten auswirkt. 
+Die im Zuge der Digitalisierung häufig angewandten maschinellen Lernmethoden besitzen dabei das Potential, riesige Datenmengen in einer angemessenen Zeit nach Mustern zu durchsuchen und dabei Hinweise zu geben, wie einer Problematik entgegengewirkt werden kann. 
+So könnten diese Analysen auch bei der Ergreifung von Verbrechern behilflich sein (\textit{Predictive Policing}).
+
+Bereits seit den 20er-Jahren wird versucht, die Wahrscheinlichkeit der Rückfälligkeit von Tätern bei möglichen Bewährungsstrafen miteinzubeziehen und diese zu dadurch zu klassifizieren.
+Auch bei der Ermittlung eines angemessenen Straßmaßes wird diese Wahrscheinlichkeit in Betracht gezogen.
+Die daraus abzuleitenden Hauptfragen der folgenden Arbeit wird es sein, inwiefern sich alte Methoden (bspw. \textit{logistische Regression}) durch neuartige (bspw. \textit{Random Forests}) ergänzen bzw. gänzlich ersetzen lassen, wie dies in der Realität evaluiert werden sollte und ob der Mensch überhaupt noch als Arbeitskraft benötigt wird.
+
+Auch um die Frage einer angemessenen Veranschaulichung der Methodik wird es in der folgenden Arbeit gehen, da die Resultate für Stakeholder so aufschlussreich wie möglich dargestellt werden sollten, um diesen sowohl die Legitimation ihrer Entscheidung als auch die Evaluation dieser zu vereinfachen.
+Dabei wird es zu Limitationen kommen, da sich durch maschinelle Lernmethoden häufig Umstände ergeben, die ein genaues Erfassen der Vorgehensweise dieser Methoden erschweren und so Rückschlüsse auf einzelne Variablen nur bedingt möglich sein werden, sodass die Vor- und Nachteile dieser Methoden vor dem Hintergrund dieser Intransparenz kritisch aufgewogen werden müssen.\\
+
+Wichtige Angelegenheiten wie bspw. der Datenschutz und die damit einhergehende Wahrung der Privatsphäre müssen zusätzlich diskutiert werden, da es den Menschen Unbehagen bereitet, wenn mit ihren Daten nicht sorgfältig und anonym umgegangen wird. 
+Die daraus resultierende Frage, was dabei rechtens ist und wie sich Gesetze im Bereich der Digitalisierung anpassen bzw. entwickeln sollten, um die perfekte Balance zwischen Persönlichkeitsrechten und öffentlicher Sicherheit zu finden, wird somit vom Autor berücksichtigt.
+So soll letztendlich mit dieser Arbeit dazu beigetragen werden, den Polizeiämtern weltweit eine Hilfestellung bei der Allokation begrenzter Ressourcen zu geben. 
+Straftaten zu verhindern ist dabei in jeglicher Hinsicht kostengünstiger, als sie im Nachhinein aufzuklären.
+
+
+
+\newpage
+\section{Einleitung}
+
+- im Groben: siehe Zusammenfassung 
+
+- Motivation des Themas und praktische/theoretische Relevanz
+
+- Facebook-Skandal mit Cambridge Analytica 
+
+
+
+
+\newpage
+\section{Grundlagen und Notwendigkeit}
+
+- Zahlen aus Kriminalstatistiken (Interpol, Europol, BKA, BfV, etc.) für die Notwendigkeit
+
+- hochkomplexe und umfangreiche Datenmengen, insbesondere durch Vernetzung der Ämter
+
+- welche Problemfelder können sowohl mit altbewährten als auch mit neuartigen Methoden angegangen werden (Perry, xv):
+
+--> Identify areas at increased risk, Identify geographic features that increase the risk of crime, Find a high risk of a violent outbreak between criminal group, Identify individuals who may become offenders,
+Identify suspects using a victim’s criminal history or other partial data (e.g., plate number, is it a serial perpetrator?, are there important person in the killers milieu? --> automatisiert durch vernetzte Datenbanken), locating serial killers anchor point
+
+
+- Taxonomy des Predictive Policing (aus Perry, S. xiv):
+
+--> Methods for predicting crime, Methods for predicting offenders, Methods for predicting perpetrators’ identities, Methods for predicting victims of crimes
+
+- Möglichkeiten, Erkenntnisse in Praxis umzusetzen? (bspw. mehr Polizeieinsatz an high-risk Orten (allgm.) oder andersartigen Polizeieinsatz(spezifisch) (Perry))
+
+- Software PredPol vorstellen, aber auch OpenSource-Software wie CrimeStat III
+
+- Googles Tensorflow zum Aufbau von Modellen aus dem Bereich der maschinellen Lernmethoden\\
+
+
+
+
+---- weitere Autoren/ Modelle: 
+
+- Berk (2013, Berechnung eines Rückfalls)
+- Chan (2015, Werden Social Scientisten von Big Data Analysten abgelöst?) 
+
+
+Forschungslücke: 
+
+- Inwiefern lassen sich alte Methoden durch neuartige ergänzen bzw. gänzlich ersetzen?
+
+- Wird der Mensch überhaupt noch als Arbeitskraft benötigt im Bereich Kriminalanalyse?
+
+\newpage
+\section{Maschinelle Lernmethoden zum Forecasting}
+
+\subsection{Klassifikation}
+
+- Random Forest (kein Overfit/ adaptiv/ Rückschlüsse auf einzelne Variablen durch den 'Increase in Forecasting Error/ Partial Dependence Plot' möglich(Berk, 2013)), 
+
+- Konvolutionales Neuronales Netzwerk (Overfit):
+--> bereits erste Versuche im Bereich Natural Language Processing mit Wort-Vektoren durchgeführt:
+Input: 		Fallbeschreibung
+Output: 	Kategorie des Vorfalls
+
+Hier bestünde die Möglichkeit, den Vergleich zu früher zu ziehen, wo Kategorien u.U. händisch eingetragen werden mussten (Quellen?)
+
+
+, stochastic gradient boosting (Overfit/ adaptiv), Logistische Regression (nicht adaptiv, nur zwei Outputklassen) 
+
+- wichtig, dass nicht Apples mit Oranges verglichen werden (siehe Tuning-Parameter der einzelnen Methoden)
+
+--> muss vergleichbar sein
+
+- allgemein: siehe Hastie, Perry
+
+
+\subsubsection{Linearität und Nichtlinearität}
+
+- je mehr Nichtlinearität, desto genauer, jedoch Gefahr des Overfittings
+
+\subsubsection{Behandlung der Forecast-Errors}
+
+- sollten diese gleich behandelt werden bei Klassifikationen?
+
+-> Betrachtung der Auswirkung einer Fehleinschätzung (Kosten eines Toten durch Mord schwer vergleichbar/ messbar)
+
+-> wie könnte man Fehler unterschiedlich gewichten? Bestimmung der Cost Ratio (False Negatives versus False Positives, Kosten eines unvorhergesagten Mordes wiegen schwerer als Kosten eines "zu lange Verurteilten")
+
+
+
+\subsection{Regression}
+
+- Neuronales Netzwerk
+
+- allgemein: siehe Hastie, Perry
+
+
+- wichtig, dass nicht Apples mit Oranges verglichen werden (siehe Tuning-Parameter der einzelnen Methoden)
+
+--> muss vergleichbar sein
+
+
+\subsubsection{Linearität und Nichtlinearität}
+
+- je mehr Nichtlinearität, desto genauer für Trainingsdaten, jedoch Gefahr des Overfittings (Testdaten werden dann nicht mehr akkurat dargestellt)
+
+
+\newpage
+\subsection{Empirie}
+
+- Datensets: Kriminaldatensätze aus Kaggle (San Francisco (878050x14), Chicago, Baltimore)
+
+--> welche Variablen sind vorhanden? Sind diese relevant? Wie ist die Datenqualität? Fehlen viele (data censoring), sind sie systematisch verzerrt (systematic bias)?
+
+- Auswertungen mit Confusion Table bei Klassifikationsproblemen
+
+- die drei verschiedenen Datensätze auf Unterschiede vergleichen und diese versuchen zu erklären, falls vorhanden (evtl. auch Erkenntnisse zusammenführen? Data Fusion?)
+
+
+\newpage
+\section{Diskussion, Limitationen, Empfehlungen und Rechtliches}
+
+- sind Ergebnisse durch Empirie relevant (in absoluten Zahlen?), besitzen also einen taktischen Nutzen oder wurde legidlich die Performance hochgeschraubt ohne wirklichen Mehrwert?
+
+--> Einschätzung, ob Einführung neuartiger Praktiken deutlichen Zuwachs mit sich bringen ggü. altbewährten Praktiken
+
+- Empfehlungen für Stakeholder aller Art (wie sollen Erkenntnisse aus der Empirie umgesetzt werden in die Praxis? Käufer, Verkäufer, Entwickler)
+
+- auf was sollte stets bei der Datenbeschaffung geachtet werden?
+
+- inwiefern sind Zivil- bzw. Privatsrechte bei den unterschiedlichen Methoden betroffen? 
+
+- auf fragliche Paragrafen eingehen? oder zu rechtlich? 
+
+- auf neu geschaffenes 'Digitalministerium' eingehen (Dorothee Bär als neue 'Digitalministerin') sowie Deutschlands Rolle insgesamt 
+
+--> aufpassen, dass es nicht zu weitläufig wird
+
+- Facebook-Skandal mit Cambridge Analytica
+
+- mit Mythen aufräumen, die weit verbreitet sind was PredPol angeht (Perry, xix)
+
+- wie wichtig ist der Einsatz eines Menschen überhaupt noch? Empfehlungen zur Zusammenarbeit zwischen Mensch und Maschine (Perry, xxiii) 
+
+- Wie ist der wissenschaftliche und praktische Beitrag zu bewerten?
+
+
+\newpage
+
+\section{Ergänzungen}
+
+
+\subsection{Einleitung}
+- hohes Medieninteresse -> keine Kristallkugen (Perry, 6)
+
+\subsection{frühere Methoden}
+- Mapping (Alberto R. Gonzales
+Attorney General
+Regina B. Schofield
+Assistant Attorney General
+Sarah V. Hart
+Director, National Institute of Justice )
+
+\section{Grundlagen und Notwendigkeit}
+
+Hauptaufgaben dieser Thesis:
+
+- Identify individuals who may become offenders  (Perry, 10, Table 1.2, pre-crime):
+--> klinische Techniken, die risk score aus Risikofaktoren ermitteln (wie hoch ist Rückfallgefahr???)
+--> Predicted wird dann mit Regression/ Klassifikation
+
+-> social analysis of twitter accounts of past offenders (Twitter-API, danielengbert)
+
+- Identify individuals who may are perpetrators of past crimes (Perry, 11, Table 1.3, past-crime):
+- geht auch für vergangene Verbrechen, um durch die Umstände des Verbrechens auf einen Täter zu schließen
+
+
+\section{Schluss}
+
+\section{Referenzen}
+
+\section{Anhang}
+
+\section{Ehrenwörtliche Erklärung der Abschlussarbeit}
+
+\end{document}

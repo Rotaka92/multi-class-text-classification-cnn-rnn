@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+            
+<title>How We Analyzed the COMPAS Recidivism Algorithm — ProPublica</title>
+
+<!-- Standard Meta -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQEFWVRQDxADVldWAwMOVA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="description" content="The following tables show how the COMPAS recidivism score performed: All Defendants Low High Survived 2681 1282 Recidivated 1216 2035 FP rate: 32.35 FN rate:…" />
+<link rel="canonical" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm" />
+<meta name="author" content="Jeff Larson,Julia Angwin,Lauren Kirchner,Surya Mattu" />
+<meta name="datePublished" content="2016-05-23" />
+<meta name="headline" content="How We Analyzed the COMPAS Recidivism Algorithm" />
+<meta name="inLanguage" content="en" />
+
+<meta name="geo.region" content="New York" />
+<meta name="geo.position" content="40.725395,-74.0048036" />
+<meta name="ICBM" content="40.725395,-74.0048036" />
+<meta name="geo.placename" content="ProPublica" />
+
+<!-- Dublin Core basic info -->
+
+<meta name="dcterms.Identifier" content="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm" />
+<meta name="dcterms.Format" content="text/html" />
+<meta name="dcterms.Relation" content="ProPublica" />
+<meta name="dcterms.Language" content="en" />
+<meta name="dcterms.Publisher" content="ProPublica" />
+<meta name="dcterms.Type" content="text/html" />
+<meta name="dcterms.Coverage" content="https://www.propublica.org/" />
+<meta name="dcterms.Rights" content="Copyright &copy;2018 ProPublica." />
+<meta name="dcterms.Title" content="How We Analyzed the COMPAS Recidivism Algorithm" />
+<meta name="dcterms.Contributor" content="Jeff Larson,Julia Angwin,Lauren Kirchner,Surya Mattu" />
+<meta name="dcterms.Date" content="2016-05-23" />
+<meta name="dcterms.Description" content="The following tables show how the COMPAS recidivism score performed: All Defendants Low High Survived 2681 1282 Recidivated 1216 2035 FP rate: 32.35 FN rate:…" />
+
+<!-- Facebook OpenGraph -->
+
+<meta property="fb:profile_id" content="13320939444" />
+<meta property="fb:app_id" content="229862657130557" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:url" content="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm" />
+<meta property="og:title" content="How We Analyzed the COMPAS Recidivism Algorithm — ProPublica" />
+<meta property="og:description" content="The following tables show how the COMPAS recidivism score performed: All Defendants Low High Survived 2681 1282 Recidivated 1216 2035 FP rate: 32.35 FN rate: 37.40 PPV: 0.61 NPV: 0.69 LR+: 1.94 LR-..." />
+<meta property="og:image" content="https://assets.propublica.org/legacy/images/ngen/gypsy_og_image/20160523-machine-bias-1200x630_1.jpg" />
+<meta property="og:site_name" content="ProPublica" />
+<meta property="og:see_also" content="https://twitter.com/propublica" />
+<meta property="og:see_also" content="https://www.facebook.com/propublica" />
+<meta property="og:see_also" content="https://en.wikipedia.org/wiki/ProPublica" />
+
+<!-- Twitter Card -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@propublica" />
+<meta name="twitter:creator" content="@propublica" />
+<meta name="twitter:title" content="How We Analyzed the COMPAS Recidivism Algorithm — ProPublica" />
+<meta name="twitter:description" content="The following tables show how the COMPAS recidivism score performed: All Defendants Low High Survived 2681 1282 Recidivated 1216 2035 FP rate: 32.35 FN rate: 37.40 PPV: 0.61 NPV: 0.69 LR+: 1.94 LR-..." />
+<meta name="twitter:image" content="https://assets.propublica.org/legacy/images/ngen/gypsy_og_image/20160523-machine-bias-1200x630_1.jpg" />
+
+
+
+<!-- Domain verification -->
+
+
+<!-- Identity -->
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "NGO",
+    "name": "ProPublica",
+    "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "url": "https://www.propublica.org",
+    "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+        "height": "630",
+        "width": "1200" 
+    },
+    "telephone": "1-212-514-5250",
+    "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "155 Avenue of the Americas",
+        "addressLocality": "13th Floor",
+        "addressRegion": "New York",
+        "postalCode": "N.Y. 10013",
+        "addressCountry": "US" 
+    },
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+        "height": "630",
+        "width": "1200" 
+    },
+    "location": {
+        "@type": "Place",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+        "telephone": "1-212-514-5250",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.725395",
+            "longitude": "-74.0048036" 
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        } 
+    } 
+}
+</script>
+
+<!-- WebSite -->
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "ProPublica",
+    "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "url": "https://www.propublica.org/",
+    "image": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+    "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica"],
+    "copyrightHolder": {
+        "@type": "NGO",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "telephone": "1-212-514-5250",
+        "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "location": {
+            "@type": "Place",
+            "name": "ProPublica",
+            "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+            "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+            "telephone": "1-212-514-5250",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "url": "https://www.propublica.org",
+            "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.725395",
+                "longitude": "-74.0048036" 
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "155 Avenue of the Americas",
+                "addressLocality": "13th Floor",
+                "addressRegion": "New York",
+                "postalCode": "N.Y. 10013",
+                "addressCountry": "US" 
+            } 
+        } 
+    },
+    "author": {
+        "@type": "NGO",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "telephone": "1-212-514-5250",
+        "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "location": {
+            "@type": "Place",
+            "name": "ProPublica",
+            "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+            "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+            "telephone": "1-212-514-5250",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "url": "https://www.propublica.org",
+            "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.725395",
+                "longitude": "-74.0048036" 
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "155 Avenue of the Americas",
+                "addressLocality": "13th Floor",
+                "addressRegion": "New York",
+                "postalCode": "N.Y. 10013",
+                "addressCountry": "US" 
+            } 
+        } 
+    },
+    "creator": {
+        "@type": "Organization" 
+    } 
+}
+</script>
+
+<!-- Place -->
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Place",
+    "name": "ProPublica",
+    "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+    "telephone": "1-212-514-5250",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+        "height": "630",
+        "width": "1200" 
+    },
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+        "height": "630",
+        "width": "1200" 
+    },
+    "url": "https://www.propublica.org",
+    "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.725395",
+        "longitude": "-74.0048036" 
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "155 Avenue of the Americas",
+        "addressLocality": "13th Floor",
+        "addressRegion": "New York",
+        "postalCode": "N.Y. 10013",
+        "addressCountry": "US" 
+    } 
+}
+</script>
+
+<!-- Main Entity of Page -->
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "name": "ProPublica",
+    "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://assets.propublica.org/legacy/images/ngen/gypsy_og_image/20160523-machine-bias-1200x630_1.jpg",
+        "width": "1200",
+        "height": "630" 
+    },
+    "url": "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm",
+    "mainEntityOfPage": "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm",
+    "inLanguage": "en_us",
+    "headline": "How We Analyzed the COMPAS Recidivism Algorithm",
+    "dateCreated": "2017-03-15T02:40:45+0000",
+    "dateModified": "2017-08-06T16:57:34+0000",
+    "datePublished": "2016-05-23T11:59:00+0000",
+    "copyrightYear": "2016",
+    "author": {
+        "@type": "NGO",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "telephone": "1-212-514-5250",
+        "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "location": {
+            "@type": "Place",
+            "name": "ProPublica",
+            "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+            "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+            "telephone": "1-212-514-5250",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "url": "https://www.propublica.org",
+            "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.725395",
+                "longitude": "-74.0048036" 
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "155 Avenue of the Americas",
+                "addressLocality": "13th Floor",
+                "addressRegion": "New York",
+                "postalCode": "N.Y. 10013",
+                "addressCountry": "US" 
+            } 
+        } 
+    },
+    "copyrightHolder": {
+        "@type": "NGO",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "telephone": "1-212-514-5250",
+        "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "location": {
+            "@type": "Place",
+            "name": "ProPublica",
+            "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+            "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+            "telephone": "1-212-514-5250",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "url": "https://www.propublica.org",
+            "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.725395",
+                "longitude": "-74.0048036" 
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "155 Avenue of the Americas",
+                "addressLocality": "13th Floor",
+                "addressRegion": "New York",
+                "postalCode": "N.Y. 10013",
+                "addressCountry": "US" 
+            } 
+        } 
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ProPublica",
+        "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+        "url": "https://www.propublica.org",
+        "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "telephone": "1-212-514-5250",
+        "email": "&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#112;&#117;&#98;&#108;&#105;&#99;&#97;&#46;&#111;&#114;&#103;",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "155 Avenue of the Americas",
+            "addressLocality": "13th Floor",
+            "addressRegion": "New York",
+            "postalCode": "N.Y. 10013",
+            "addressCountry": "US" 
+        },
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+            "height": "630",
+            "width": "1200" 
+        },
+        "location": {
+            "@type": "Place",
+            "name": "ProPublica",
+            "description": "ProPublica is an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+            "hasMap": "http://maps.google.com/maps?q=ProPublica%2C+155+Avenue+of+the+Americas%2C+13th+Floor%2C+New+York+N.Y.+10013%2C+US",
+            "telephone": "1-212-514-5250",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://assets.propublica.org/2017-pp-open-graph-1200x630.jpg",
+                "height": "630",
+                "width": "1200" 
+            },
+            "url": "https://www.propublica.org",
+            "sameAs": ["https://twitter.com/propublica","https://www.facebook.com/propublica","https://en.wikipedia.org/wiki/ProPublica"],
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.725395",
+                "longitude": "-74.0048036" 
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "155 Avenue of the Americas",
+                "addressLocality": "13th Floor",
+                "addressRegion": "New York",
+                "postalCode": "N.Y. 10013",
+                "addressCountry": "US" 
+            } 
+        } 
+    },
+    "articleSection": "Machine Bias",
+    "creator": ["Jeff Larson","Julia Angwin","Lauren Kirchner","Surya Mattu"],
+    "thumbnail": "https://assets.propublica.org/legacy/images/ngen/gypsy_og_image/20160523-machine-bias-1200x630_1.jpg",
+    "keywords": [""] 
+}
+</script>
+
+<!-- Breadcrumbs -->
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": "1",
+            "item": {
+                "@id": "https://www.propublica.org/",
+                "name": "Homepage Placeholder (do not remove)" 
+            } 
+        },
+        {
+            "@type": "ListItem",
+            "position": "2",
+            "item": {
+                "@id": "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm",
+                "name": "How We Analyzed the COMPAS Recidivism Algorithm" 
+            } 
+        }
+    ] 
+}
+</script>
+
+<!-- Google Tag Manager  -->
+<script>
+  dataLayer = [{"contentType":"Item","contentSubtype":"Article","publicationDate":"May 23, 2016 07:59:00","articleCategory":"Criminal Justice","articleTitle":"How We Analyzed the COMPAS Recidivism Algorithm","authorName":"Jeff Larson,Julia Angwin,Lauren Kirchner,Surya Mattu","seriesName":"Machine Bias"}];
+  </script>
+    <!-- Critical JS -->
+    <script>window.PP={},window.PP.utils={},window.PP.config={};var googletag=googletag||{};googletag.cmd=googletag.cmd||[],PP.config.donateBanner={secondsUntilShown:.25,daysForDonateBarDismissal:3},function(e,t){var n=e.PP;n.utils.loadJS=function(e,t){"use strict";var n=window.document.getElementsByTagName("script")[0],o=window.document.createElement("script");return o.src=e,o.async=!0,n.parentNode.insertBefore(o,n),t&&"function"==typeof t&&(o.onload=t),o},n.utils.cookie=function(e,n,o){if(n===t){var i=("; "+window.document.cookie).split("; "+e+"=");return 2===i.length?i.pop().split(";").shift():null}var a;if(!1===n&&(o=-1),o){var s=new Date;s.setTime(s.getTime()+24*o*60*60*1e3),a="; expires="+s.toGMTString()}else a="";window.document.cookie=e+"="+n+a+"; path=/"}}(this),function(){"use strict";function e(e){c.push(e),1==c.length&&r()}function t(){for(;c.length;)c[0](),c.shift()}function n(e){this.a=d,this.b=void 0,this.f=[];var t=this;try{e(function(e){i(t,e)},function(e){a(t,e)})}catch(e){a(t,e)}}function o(e){return new n(function(t){t(e)})}function i(e,t){if(e.a==d){if(t==e)throw new TypeError;var n=!1;try{var o=t&&t.then;if(null!=t&&"object"==typeof t&&"function"==typeof o)return void o.call(t,function(t){n||i(e,t),n=!0},function(t){n||a(e,t),n=!0})}catch(t){return void(n||a(e,t))}e.a=0,e.b=t,s(e)}}function a(e,t){if(e.a==d){if(t==e)throw new TypeError;e.a=1,e.b=t,s(e)}}function s(t){e(function(){if(t.a!=d)for(;t.f.length;){var e=(i=t.f.shift())[0],n=i[1],o=i[2],i=i[3];try{0==t.a?o("function"==typeof e?e.call(void 0,t.b):t.b):1==t.a&&("function"==typeof n?o(n.call(void 0,t.b)):i(t.b))}catch(e){i(e)}}})}var r,c=[];r=function(){setTimeout(t)};var d=2;n.prototype.g=function(e){return this.c(void 0,e)},n.prototype.c=function(e,t){var o=this;return new n(function(n,i){o.f.push([e,t,n,i]),s(o)})},window.Promise||(window.Promise=n,window.Promise.resolve=o,window.Promise.reject=function(e){return new n(function(t,n){n(e)})},window.Promise.race=function(e){return new n(function(t,n){for(var i=0;i<e.length;i+=1)o(e[i]).c(t,n)})},window.Promise.all=function(e){return new n(function(t,n){var i=0,a=[];0==e.length&&t(a);for(var s=0;s<e.length;s+=1)o(e[s]).c(function(n){return function(o){a[n]=o,(i+=1)==e.length&&t(a)}}(s),n)})},window.Promise.prototype.then=n.prototype.c,window.Promise.prototype.catch=n.prototype.g)}(),function(){function e(e,t){document.addEventListener?e.addEventListener("scroll",t,!1):e.attachEvent("scroll",t)}function t(e){document.body?e():document.addEventListener?document.addEventListener("DOMContentLoaded",function t(){document.removeEventListener("DOMContentLoaded",t),e()}):document.attachEvent("onreadystatechange",function t(){"interactive"!=document.readyState&&"complete"!=document.readyState||(document.detachEvent("onreadystatechange",t),e())})}function n(e){this.a=document.createElement("div"),this.a.setAttribute("aria-hidden","true"),this.a.appendChild(document.createTextNode(e)),this.b=document.createElement("span"),this.c=document.createElement("span"),this.h=document.createElement("span"),this.f=document.createElement("span"),this.g=-1,this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;",this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;",this.b.appendChild(this.h),this.c.appendChild(this.f),this.a.appendChild(this.b),this.a.appendChild(this.c)}function o(e,t){e.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+t+";"}function i(e){var t=e.a.offsetWidth,n=t+100;return e.f.style.width=n+"px",e.c.scrollLeft=n,e.b.scrollLeft=e.b.scrollWidth+100,e.g!==t&&(e.g=t,!0)}function a(t,n){function o(){var e=a;i(e)&&e.a.parentNode&&n(e.g)}var a=t;e(t.b,o),e(t.c,o),i(t)}function s(e,t){var n=t||{};this.family=e,this.style=n.style||"normal",this.weight=n.weight||"normal",this.stretch=n.stretch||"normal"}function r(){if(null===u)if(c()&&/Apple/.test(window.navigator.vendor)){var e=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);u=!!e&&603>parseInt(e[1],10)}else u=!1;return u}function c(){return null===p&&(p=!!document.fonts),p}function d(){if(null===h){var e=document.createElement("div");try{e.style.font="condensed 100px sans-serif"}catch(e){}h=""!==e.style.font}return h}function l(e,t){return[e.style,e.weight,d()?e.stretch:"","100px",t].join(" ")}var f=null,u=null,h=null,p=null;s.prototype.load=function(e,i){var s=this,d=e||"BESbswy",u=0,h=i||3e3,p=(new Date).getTime();return new Promise(function(e,i){if(c()&&!r()){var m=new Promise(function(e,t){function n(){(new Date).getTime()-p>=h?t():document.fonts.load(l(s,'"'+s.family+'"'),d).then(function(t){1<=t.length?e():setTimeout(n,25)},function(){t()})}n()}),w=new Promise(function(e,t){u=setTimeout(t,h)});Promise.race([w,m]).then(function(){clearTimeout(u),e(s)},function(){i(s)})}else t(function(){function t(){var t;(t=-1!=v&&-1!=g||-1!=v&&-1!=y||-1!=g&&-1!=y)&&((t=v!=g&&v!=y&&g!=y)||(null===f&&(t=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),f=!!t&&(536>parseInt(t[1],10)||536===parseInt(t[1],10)&&11>=parseInt(t[2],10))),t=f&&(v==b&&g==b&&y==b||v==x&&g==x&&y==x||v==T&&g==T&&y==T)),t=!t),t&&(P.parentNode&&P.parentNode.removeChild(P),clearTimeout(u),e(s))}function r(){if((new Date).getTime()-p>=h)P.parentNode&&P.parentNode.removeChild(P),i(s);else{var e=document.hidden;!0!==e&&void 0!==e||(v=c.a.offsetWidth,g=m.a.offsetWidth,y=w.a.offsetWidth,t()),u=setTimeout(r,50)}}var c=new n(d),m=new n(d),w=new n(d),v=-1,g=-1,y=-1,b=-1,x=-1,T=-1,P=document.createElement("div");P.dir="ltr",o(c,l(s,"sans-serif")),o(m,l(s,"serif")),o(w,l(s,"monospace")),P.appendChild(c.a),P.appendChild(m.a),P.appendChild(w.a),document.body.appendChild(P),b=c.a.offsetWidth,x=m.a.offsetWidth,T=w.a.offsetWidth,r(),a(c,function(e){v=e,t()}),o(c,l(s,'"'+s.family+'",sans-serif')),a(m,function(e){g=e,t()}),o(m,l(s,'"'+s.family+'",serif')),a(w,function(e){y=e,t()}),o(w,l(s,'"'+s.family+'",monospace'))})})},"object"==typeof module?module.exports=s:(window.FontFaceObserver=s,window.FontFaceObserver.prototype.load=s.prototype.load)}(),function(e,t){"use strict";e.PP.utils;var n=[];if("sessionStorage"in window){if("loaded"===sessionStorage.getItem("fontsLoaded"))n.push("fonts-loaded");else{var o=new FontFaceObserver("Tiempos Text",{weight:400}),i=new FontFaceObserver("Tiempos Text",{style:"italic",weight:400}),a=new FontFaceObserver("Tiempos Text",{weight:700}),s=new FontFaceObserver("Tiempos Text",{style:"italic",weight:700}),r=new FontFaceObserver("Graphik",{weight:400}),c=new FontFaceObserver("Graphik",{style:"italic",weight:400}),d=new FontFaceObserver("Graphik",{weight:700}),l=new FontFaceObserver("Graphik",{style:"italic",weight:700});e.Promise.all([o.load(),i.load(),a.load(),s.load(),r.load(),c.load(),d.load(),l.load()]).then(function(){e.document.documentElement.className+=" fonts-loaded",sessionStorage.setItem("fontsLoaded","loaded")})}}e.document.documentElement.className+=" "+n.join(" ")}(this);</script>
+
+    <!-- DFP JS -->
+    <script>window.googletag = window.googletag || {};
+googletag.cmd = googletag.cmd || [];
+var htlbid = htlbid || {};
+htlbid.que = htlbid.que || [];
+htlbid.opts = htlbid.opts || {};
+(function() {
+    var htlbidEl = document.createElement("script");
+    htlbidEl.type = "text/javascript";
+    htlbidEl.async = true;
+    htlbidEl.src = "//htl.bid/build/bidder-propublica.js";
+    var htlbidTargetEl = document.getElementsByTagName("head")[0];
+    htlbidTargetEl.insertBefore(htlbidEl, htlbidTargetEl.firstChild);
+})();
+
+googletag.cmd.push(function() {
+   htlbid.init();
+ 
+   googletag.defineSlot('/2219821/Desktop_Leaderboard_1', [], 'Desktop_Leaderboard_1')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [[1, 1], [728, 90]])
+        .addSize([0, 0], [])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Desktop_MedRec_1', [], 'Desktop_MedRec_1')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [[1, 1], [300, 250]])
+        .addSize([0, 0], [])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Desktop_MedRec_2', [], 'Desktop_MedRec_2')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [[1, 1], [300, 250]])
+        .addSize([0, 0], [])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Mobile_Leaderboard_1', [], 'Mobile_Leaderboard_1')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [])
+        .addSize([0, 0], [[1, 1], [320, 50], [320, 100]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Mobile_Leaderboard_2', [], 'Mobile_Leaderboard_2')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [])
+        .addSize([0, 0], [[1, 1], [320, 50]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Mobile_Leaderboard_3', [], 'Mobile_Leaderboard_3')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [])
+        .addSize([0, 0], [[1, 1], [320, 50], [300, 250]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Mobile_MedRec_1', [], 'Mobile_MedRec_1')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([960, 0], [])
+        .addSize([0, 0], [[1, 1], [300, 250]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Sidebar_Donate', [], 'Sidebar_Donate')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([0, 0], [[1, 1], [300, 600]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Top_Pushdown', [], 'Top_Pushdown')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([0, 0], [[1, 1], [1030, 40]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.defineSlot('/2219821/Rt_Sdbr_Non-Mobile-Only300x250', [], 'ad-square-1')
+      .defineSizeMapping(googletag.sizeMapping()
+        .addSize([0, 0], [[1, 1], [300, 250]])
+        .build())
+      .addService(googletag.pubads());
+
+    googletag.pubads().setCentering(true);
+    googletag.pubads().collapseEmptyDivs();
+
+        	googletag.pubads().setTargeting('is_home', 'no');
+			    			googletag.pubads().setTargeting('post_id', '68953') // string, article ID for an individual page
+			    				googletag.pubads().setTargeting('post_tags', ['Criminal Justice&#039;,&#039;Technology']) // array of strings
+						    				googletag.pubads().setTargeting('post_cats', ['Machine Bias']) // array of strings
+						        	googletag.pubads().setTargeting('is_testing', 'no');
+    
+    googletag.enableServices();
+
+});
+</script>
+
+    <!-- JS -->
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <script src="https://www.propublica.org/js/public/assets/all.js"></script>
+
+    <!-- OTHER -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://assets.propublica.org/prod/v3/images/favicon.ico">
+    <link rel="icon" type="image/png" href="https://assets.propublica.org/prod/v3/images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://assets.propublica.org/prod/v3/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://assets.propublica.org/prod/v3/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://assets.propublica.org/prod/v3/images/favicon-128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://assets.propublica.org/prod/v3/images/favicon-196x196.png" sizes="196x196">
+    <link rel="apple-touch-icon" href="https://assets.propublica.org/prod/v3/images/apple-touch-icon-180x180.png" sizes="180x180">
+    <meta name="application-name" content="ProPublica">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://assets.propublica.org/prod/v3/images/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="https://assets.propublica.org/prod/v3/images/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="https://assets.propublica.org/prod/v3/images/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="https://assets.propublica.org/prod/v3/images/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="https://assets.propublica.org/prod/v3/images/mstile-310x310.png">
+
+    <!-- START EXPRESSIONENGINE CUSTOM HEADER CONTENT -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="canonical" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm/">
+	<link rel="stylesheet" href="https://static.propublica.org/projects/algorithmic-bias/assets/css/main.css?2016052694713">
+	<script src="https://static.propublica.org/projects/algorithmic-bias/assets/js/lib/modernizr.custom.js?2016052694713"></script>
+	<script>
+		(function() {
+			var config = {
+				kitId: 'qey1xmz',
+				scriptTimeout: 3000
+			};
+			var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+		})();
+	</script>
+	<link rel='stylesheet' href='https://static.propublica.org/projects/algorithmic-bias/assets/fonts/ss-standard.css?2016052694713' />
+	<script src="https://static.propublica.org/projects/algorithmic-bias/assets/js/lib/socialsnippet.js?2016052694713"></script>
+	<script>
+		propublica.views.socialLI = propublica.views.socialSection.extend({
+			cssClass: 'social-widget',
+			tag: 'li'
+		});
+	</script>
+	<script src="//www.propublica.org/js/public/assets/google_ads_boot.js?2016052694713"></script>
+	<script>
+		(function(){
+			var o = function(it) { return it.replace(/\s+/g, "_") };
+			googletag.pubads().setTargeting('type',    o('story'));
+		})();
+	</script>
+	<script src="//www.propublica.org/js/public/assets/google_ads.js?2016052694713"></script>
+
+
+	<!-- END EXPRESSIONENGINE CUSTOM HEADER CONTENT -->
+
+</head>
+
+
+<body id="www-propublica-org" class="article">
+
+        <script src="//www.propublica.org/js/public/assets/beacons.js"></script>
+    <script src="//connect.facebook.net/en_US/all.js"></script>
+    <div id="fb-root"></div>
+    <script>
+	    FB.init({
+	        appId: '229862657130557', // App ID
+	        status: true, // check login status
+	        cookie: true, // enable cookies to allow the server to access the session
+	        xfbml: true // parse XFBML
+	    });
+    </script>
+
+
+    
+	<!-- START EXPRESSIONENGINE BODY CONTENT -->
+
+  <script src="//connect.facebook.net/en_US/all.js"></script>
+    <div id="fb-root"></div>
+    <script>
+      FB.init({
+        appId      : '229862657130557', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+    </script>
+
+	<!-- we can't edit body tag, so use custom bodyclass value in YAML if needed -->
+	<div id="page-body" class="methodology methodology">
+
+	
+	<header role="banner">
+	    <h1><a href="https://www.propublica.org">ProPublica</a></h1>
+	    
+		<nav>
+			<ul class="social-links">
+				<li class="facebook social-widget ss-fb" data-title="How We Analyzed the COMPAS Recidivism Algorithm" data-img="https://www.propublica.org/images/ngen/gypsy_og_image/20160523-machine-bias-1200x630.jpg" data-txt="Analysis for the ProPublica story Machine Bias" data-desc="" data-url="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm/" data-hashtag=""><a href="#">Share on Facebook</a></li>
+				<li class="twitter social-widget ss-tw" data-txt="How We Analyzed the COMPAS Recidivism Algorithm" data-url="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm/" data-hashtag=""><a href="#">Share on Twitter</a></li>
+				
+			</ul>
+			<ul class="donate-links">
+				<li class="tab"><a href="https://www.propublica.org/site/donate3/">Donate</a></li>
+			</ul>
+		</nav>
+	</header><!-- end header[role="banner"] -->
+	
+
+	<main role="main">
+		<div id="article-top"></div>
+		<article>
+	    <header>
+				<figure>
+					<div class="lede-img-wrapper">
+						<span data-picture data-alt >
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-480*240-2c7e9e.jpg"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-960*480-2c7e9e.jpg" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-800*400-2c7e9e.jpg" data-media="(min-width: 30em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-1600*800-2c7e9e.jpg" data-media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 30em) and (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-1200*600-2c7e9e.jpg" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-1600*800-2c7e9e.jpg" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/lead-image-rough-480*240-2c7e9e.jpg" alt="">
+</noscript>
+</span>
+
+					</div>
+					<figcaption></figcaption>
+				</figure>
+				<div class="title-set">
+					<div class="titles">
+						
+						<h1>How We Analyzed the COMPAS Recidivism Algorithm</h1>
+						<h2></h2>
+						<span class="byline">by Jeff Larson, Surya Mattu, Lauren Kirchner and Julia Angwin</span>
+						<time class="dateline">May 23, 2016</time>
+						
+					</div><!-- end .titles -->
+				</div><!-- end .title-set -->
+			</header><!-- end article header -->
+			<div class="wrapper">
+				<div class="content">
+					<p><a href="/article/machine-bias-risk-assessments-in-criminal-sentencing/">← Read the story</a></p>
+
+<p>Across the nation, judges, probation and parole officers are increasingly using algorithms to assess a criminal defendant’s likelihood of becoming a recidivist – a term used to describe criminals who re-offend. There are dozens of these risk assessment algorithms in use. Many states have built their own assessments, and several academics have written tools. There are also two leading nationwide tools offered by commercial vendors.</p>
+
+<p>We set out to assess one of the commercial tools made by Northpointe, Inc. to discover the underlying accuracy of their recidivism algorithm and to test whether the algorithm was biased against certain groups.</p>
+
+<p>Our analysis of Northpointe’s tool, called COMPAS (which stands for Correctional Offender Management Profiling for Alternative Sanctions), found that black defendants were far more likely than white defendants to be incorrectly judged to be at a higher risk of recidivism, while white defendants were more likely than black defendants to be incorrectly flagged as low risk.</p>
+
+<p>We looked at more than 10,000 criminal defendants in Broward County, Florida, and compared their predicted recidivism rates with the rate that actually occurred over a two-year period. When most defendants are booked in jail, they respond to a COMPAS questionnaire. Their answers are fed into the COMPAS software to generate several scores including predictions of “Risk of Recidivism” and “Risk of Violent Recidivism.”</p>
+
+<p>We compared the recidivism risk categories predicted by the COMPAS tool to the actual recidivism rates of defendants in the two years after they were scored, and found that the score correctly predicted an offender’s recidivism 61 percent of the time, but was only correct in its predictions of violent recidivism 20 percent of the time.</p>
+
+<p>In forecasting who would re-offend, the algorithm correctly predicted recidivism for black and white defendants at roughly the same rate (59 percent for white defendants, and 63 percent for black defendants) but made mistakes in very different ways. It misclassifies the white and black defendants differently when examined over a two-year follow-up period.</p>
+
+<p>Our analysis found that:</p>
+
+<ul>
+  <li>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</li>
+  <li>White defendants were often predicted to be less risky than they were. Our analysis found that white defendants who re-offended within the next two years were mistakenly labeled low risk almost twice as often as black re-offenders (48 percent vs. 28 percent).</li>
+  <li>The analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 45 percent more likely to be assigned higher risk scores than white defendants.</li>
+  <li>Black defendants were also twice as likely as white defendants to be misclassified as being a higher risk of violent recidivism. And white violent recidivists were 63 percent more likely to have been misclassified as a low risk of violent recidivism, compared with black violent recidivists.</li>
+  <li>The violent recidivism analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 77 percent more likely to be assigned higher risk scores than white defendants.</li>
+</ul>
+
+<h2 id="previous-work">Previous Work</h2>
+
+<p>In 2013, researchers Sarah Desmarais and Jay Singh examined 19 different recidivism risk methodologies being used in the United States and found that “in most cases, validity had only been examined in one or two studies conducted in the United States, and frequently, those investigations were completed by the same people who developed the instrument.”</p>
+
+<p>Their analysis of the research published before March2013 found that the tools “were moderate at best in terms of predictive validity,” Desmarais said in an interview. And she could not find any substantial set of studies conducted in the United States that examined whether risk scores were racially biased. “The data do not exist,” she said.</p>
+
+<p>The largest examination of racial bias in U.S. risk assessment algorithms since then is a <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2687339">2016 paper</a> by Jennifer Skeem at University of California, Berkeley and Christopher T. Lowenkamp from the Administrative Office of the U.S. Courts. They examined data about 34,000 federal offenders to test the predictive validity of the <a href="http://www.uscourts.gov/statistics-reports/publications/post-conviction-risk-assessment">Post Conviction Risk Assessment</a> tool that was developed by the federal courts to help probation and parole officers determine the level of supervision required for an inmate upon release.</p>
+
+<p>The authors found that the average risk score for black offenders was higher than for white offenders, but that concluded the differences were not attributable to bias.</p>
+
+<p><a href="https://www.researchgate.net/publication/258920739_Thirty_Years_of_Research_on_the_Level_of_Service_Scales_A_Meta-Analytic_Examination_of_Predictive_Accuracy_and_Sources_of_Variability">A 2013 study</a> analyzed the predictive validity among various races for another score called the Level of Service Inventory, one of the most popular commercial risk scores from Multi-Health Systems. That study found that “ethnic minorities have higher LS scores than nonminorities.” The study authors, who are Canadian, noted that racial disparities were more consistently found in the U.S. than in Canada. “One possibility may be that systematic bias within the justice system may distort the measurement of ‘true’ recidivism,” they wrote.</p>
+
+<p>A smaller 2006 study of 532 male residents of a work-release program also found “a tendency toward classification errors for African Americans” in the Level of Service Inventory-Revised. The study, by Kevin Whiteacre of the Salvation Army Correctional Services Program, found that 42.7 percent of African Americans were incorrectly classified as high risk, compared with 27.7 percent of Caucasians and 25 percent of Hispanics. That study urged correctional facilities to investigate the their use of the scores independently using a simple contingency table approach that we follow later in this study.</p>
+
+<p>As risk scores move further into the mainstream of the criminal justice system, policy makers have called for further studies of whether the scores are biased.</p>
+
+<p>When he was U.S. Attorney General, Eric Holder asked the U.S. Sentencing Commission to study potential bias in the tests used at sentencing. “Although these measures were crafted with the best of intentions, I am concerned that they inadvertently undermine our efforts to ensure individualized and equal justice,” he said, adding, “they may exacerbate unwarranted and unjust disparities that are already far too common in our criminal justice system and in our society.” The sentencing commission says it is not currently conducting an analysis of bias in risk assessments.</p>
+
+<p>So ProPublica did its own analysis.</p>
+
+<h2 id="how-we-acquired-the-data">How We Acquired the Data</h2>
+
+<p>We chose to examine the COMPAS algorithm because it is one of the most popular scores used nationwide and is increasingly being used in pretrial and sentencing, the so-called “front-end” of the criminal justice system. We chose Broward County because it is a large jurisdiction using the COMPAS tool in pretrial release decisions and Florida has strong open-records laws.</p>
+
+<p>Through a public records request, ProPublica obtained two years worth of COMPAS scores from the Broward County Sheriff’s Office in Florida. We received data for all 18,610 people who were scored in 2013 and 2014.</p>
+
+<p>Because Broward County primarily uses the score to determine whether to release or detain a defendant before his or her trial, we discarded scores that were assessed at parole, probation or other stages in the criminal justice system. That left us with 11,757 people who were assessed at the pretrial stage.</p>
+
+<p>Each pretrial defendant received at least three COMPAS scores: “Risk of Recidivism,” “Risk of Violence” and “Risk of Failure to Appear.”</p>
+
+<p>COMPAS scores for each defendant ranged from 1 to 10, with ten being the highest risk. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”</p>
+
+<p>Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, both before and after they were scored. We collected public criminal records from the <a href="http://www.clerk-17th-flcourts.org/Web2/CaseSearch/Results">Broward County Clerk’s Office</a> website through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).</p>
+
+<p>We matched the criminal records to the COMPAS records using a person’s first and last names and date of birth. This is the same technique used in the <a href="http://criminology.fsu.edu/wp-content/uploads/Validation-of-the-COMPAS-Risk-Assessment-Classification-Instrument.pdf">Broward County COMPAS validation study</a> conducted by researchers at Florida State University in 2010. We downloaded around 80,000 criminal records from the <a href="http://www.clerk-17th-flcourts.org/Web2/CaseSearch/Results">Broward County Clerk’s Office website</a>.</p>
+
+<p>To determine race, we used the race classifications used by the Broward County Sheriff’s Office, which identifies defendants as black, white, Hispanic, Asian and Native American. In 343 cases, the race was marked as Other.</p>
+
+<p>We also compiled each person’s record of incarceration. We received jail records from the Broward County Sheriff’s Office from January 2013 to April 2016, and we downloaded public incarceration records from the <a href="http://www.dc.state.fl.us/AppCommon/">Florida Department of Corrections</a> website.</p>
+
+<p>We found that sometimes people’s names or dates of birth were incorrectly entered in some records – which led to incorrect matches between an individual’s COMPAS score and his or her criminal records. We attempted to determine how many records were affected. In a random sample of 400 cases, we found an error rate of 3.75 percent (CI: +/- 1.8 percent).</p>
+
+<h2 id="how-we-defined-recidivism">How We Defined Recidivism</h2>
+
+<p>Defining recidivism was key to our analysis.</p>
+
+<p>In <a href="http://cjb.sagepub.com/content/36/1/21.abstract">a 2009 study examining the predictive power of its COMPAS score</a>, Northpointe defined recidivism as “a finger-printable arrest involving a charge and a filing for any uniform crime reporting (UCR) code.” We interpreted that to mean a criminal offense that resulted in a jail booking and took place after the crime for which the person was COMPAS scored.</p>
+
+<p>It was not always clear, however, which criminal case was associated with an individual’s COMPAS score. To match COMPAS scores with accompanying cases, we considered cases with arrest dates or charge dates within 30 days of a COMPAS assessment being conducted. In some instances, we could not find any corresponding charges to COMPAS scores. We removed those cases from our analysis.</p>
+
+<p>Next, we sought to determine if a person had been charged with a new crime subsequent to crime for which they were COMPAS screened. We did not count traffic tickets and some municipal ordinance violations as recidivism. We did not count as recidivists people who were arrested for failing to appear at their court hearings, or people who were later charged with a crime that occurred prior to their COMPAS screening.</p>
+
+<p>For violent recidivism, we used the <a href="https://www.fbi.gov/about-us/cjis/ucr/crime-in-the-u.s/2010/crime-in-the-u.s.-2010/violent-crime">FBI’s definition of violent crime</a>, a category that includes murder, manslaughter, forcible rape, robbery and aggravated assault.</p>
+
+<p>For most of our analysis, we defined recidivism as a new arrest within two years. We based this decision on Northpointe’s practitioners guide, which says that its recidivism score is meant to predict “a new misdemeanor or felony offense within two years of the COMPAS administration date.”</p>
+
+<p>In addition, a <a href="http://www.ussc.gov/research-and-publications/research-publications/2016/recidivism-among-federal-offenders-comprehensive-overview">recent study of 25,000 federal prisoners’ recidivism</a> rates by the U.S. Sentencing Commission, which shows that most recidivists commit a new crime within the first two years after release (if they are going to commit a crime at all).</p>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>We analyzed the COMPAS scores for “Risk of Recidivism” and “Risk of Violent Recidivism.” We did not analyze the COMPAS score for “Risk of Failure to Appear.”</p>
+
+<p>We began by looking at the risk of recidivism score. Our initial analysis looked at the simple distribution of the COMPAS decile scores among whites and blacks. We plotted the distribution of these scores for 6,172 defendants who had not been arrested for a new offense or who had recidivated within two years.</p>
+
+<figure class="default">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-recidivism-scores-by-race-480*194-482d1c.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-recidivism-scores-by-race-900*363-482d1c.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-recidivism-scores-by-race-900*363-482d1c.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-recidivism-scores-by-race-900*363-482d1c.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-recidivism-scores-by-race-480*194-482d1c.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+<p>These histograms show that scores for white defendants were skewed toward lower-risk categories, while black defendants were evenly distributed across scores. In our two-year sample, there were 3,175 black defendants and 2,103 white defendants, with 1,175 female defendants and 4,997 male defendants. There were 2,809 defendants who recidivated within two years in this sample.</p>
+
+<p>The histograms for COMPAS’s violent risk score also show a disparity in score distribution between white and black defendants. The sample we used to test COMPAS’s violent recidivism score was slightly smaller than for the general recidivism score: 4,020 defendants, 1,918 black defendants and 1,459 white defendants. There were 652 violent recidivists.</p>
+
+<figure class="default">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-violent-recidivism-scores-by-race-480*194-4146d6.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-violent-recidivism-scores-by-race-900*363-4146d6.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-violent-recidivism-scores-by-race-900*363-4146d6.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-violent-recidivism-scores-by-race-900*363-4146d6.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-risk-of-violent-recidivism-scores-by-race-480*194-4146d6.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+<p class="page">While there is a clear difference between the distributions of COMPAS scores for white and black defendants, merely looking at the distributions does not account for other demographic and behavioral factors.</p>
+
+<p>To test racial disparities in the score controlling for other factors, we created a logistic regression model that considered race, age, criminal history, future recidivism, charge degree, gender and age.</p>
+
+
+  <figure class="inset left">
+    <table class="regression">
+      <caption><strong>Risk of General Recidivism Logistic Model</strong></caption>
+      <thead>
+        <tr><td></td><td><em>Dependent variable:</em></td></tr>
+        <tr><td></td><td>Score (Low vs Medium and High)</td></tr>
+      </thead>
+      <tbody>
+        <tr><td>Female</td><td>0.221<sup>***</sup> (0.080)</td></tr>
+        <tr><td>Age: Greater than 45</td><td>-1.356<sup>***</sup> (0.099)</td></tr>
+        <tr><td>Age: Less than 25</td><td>1.308<sup>***</sup> (0.076)</td></tr>
+        <tr><td>Black</td><td>0.477<sup>***</sup> (0.069)</td></tr>
+        <tr><td>Asian</td><td>-0.254 (0.478)</td></tr>
+        <tr><td>Hispanic</td><td>-0.428<sup>***</sup> (0.128)</td></tr>
+        <tr><td>Native American</td><td>1.394<sup>*</sup> (0.766)</td></tr>
+        <tr><td>Other</td><td>-0.826<sup>***</sup> (0.162)</td></tr>
+        <tr><td>Number of Priors</td><td>0.269<sup>***</sup> (0.011)</td></tr>
+        <tr><td>Misdemeanor</td><td>-0.311<sup>***</sup> (0.067)</td></tr>
+        <tr><td>Two year Recidivism</td><td>0.686<sup>***</sup> (0.064)</td></tr>
+        <tr><td>Constant</td><td>-1.526<sup>***</sup> (0.079)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Observations</td><td>6,172</td></tr>
+        <tr><td>Akaike Inf. Crit.</td><td>6,192.402</td></tr>
+        <tr><td colspan="2"><em>Note: <sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</em></td></tr>
+      </tfoot>
+    </table>
+  </figure>
+
+
+<p>We used those factors to model the odds of getting a higher COMPAS score. According to <a href="http://www.northpointeinc.com/files/technical_documents/FieldGuide2_081412.pdf">Northpointe’s practitioners guide</a>, COMPAS “scores in the medium and high range garner more interest from supervision agencies than low scores, as a low score would suggest there is little risk of general recidivism,” so we considered scores any higher than “low” to indicate a risk of recidivism.</p>
+
+<p>Our logistic model found that the most predictive factor of a higher risk score was age. Defendants younger than 25 years old were 2.5 times as likely to get a higher score than middle aged offenders, even when controlling for prior crimes, future criminality, race and gender.</p>
+
+<p>Race was also quite predictive of a higher score. While Black defendants had higher recidivism rates overall, when adjusted for this difference and other factors, they were 45 percent more likely to get a higher score than whites.</p>
+
+<p class="page">Surprisingly, given their lower levels of criminality overall, female defendants were 19.4 percent more likely to get a higher score than men, controlling for the same factors.</p>
+
+
+  <figure class="inset left">
+    <table class="regression">
+      <caption><strong>Risk of Violent Recidivism Logistic Model</strong></caption>
+      <thead>
+        <tr><td></td><td><em>Dependent variable:</em></td></tr>
+        <tr><td></td><td>Score (Low vs Medium and High)</td></tr>
+      </thead>
+      <tbody>
+        <tr><td>Female</td><td>-0.729<sup>***</sup> (0.127)</td></tr>
+        <tr><td>Age: Greater than 45</td><td>-1.742<sup>***</sup> (0.184)</td></tr>
+        <tr><td>Age: Less than 25</td><td>3.146<sup>***</sup> (0.115)</td></tr>
+        <tr><td>Black</td><td>0.659<sup>***</sup> (0.108)</td></tr>
+        <tr><td>Asian</td><td>-0.985 (0.705)</td></tr>
+        <tr><td>Hispanic</td><td>-0.064 (0.191)</td></tr>
+        <tr><td>Native American</td><td>0.448 (1.035)</td></tr>
+        <tr><td>Other</td><td>-0.205 (0.225)</td></tr>
+        <tr><td>Number of Priors</td><td>0.138<sup>***</sup> (0.012)</td></tr>
+        <tr><td>Misdemeanor</td><td>-0.164<sup>*</sup> (0.098)</td></tr>
+        <tr><td>Two Year Recidivism</td><td>0.934<sup>***</sup> (0.115)</td></tr>
+        <tr><td>Constant</td><td>-2.243<sup>***</sup> (0.113)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Observations</td><td>4,020</td></tr>
+        <tr><td>Akaike Inf. Crit.</td><td>3,022.779</td></tr>
+        <tr><td colspan="2"><em>Note: <sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</em></td></tr>
+      </tfoot>
+    </table>
+  </figure>
+
+
+<p>The COMPAS software also has a score for risk of violent recidivism. We analyzed 4,020 people who were scored for violent recidivism over a period of two years (not including time spent incarcerated). We ran a similar regression model for these scores.</p>
+
+<p>Age was an even stronger predictor of a higher score for violent recidivism. Our regression showed that young defendants were 6.4 times more likely to get a higher score than middle age defendants, when correcting for criminal history, gender, race and future violent recidivism.</p>
+
+<p class="page">Race was also predictive of a higher score for violent recidivism. Black defendants were 77.3 percent more likely than white defendants to receive a higher score, correcting for criminal history and future violent recidivism.</p>
+
+<hr />
+
+<p>To test COMPAS’s overall predictive accuracy, we fit a Cox proportional hazards model to the data – the same technique that Northpointe used in its own validation study. A Cox model allows us to compare rates of recidivism while controlling for time. Because we aren’t controlling for other factors such as a defendant’s criminality we can include more people in this Cox model. For this analysis our sample size was 10,314 defendants (3,569 white defendants and 5,147 black defendants).</p>
+
+
+  <figure class="inset left">
+    <table class="regression">
+      <thead>
+        <caption><strong>Risk of General Recidivism Cox Model</strong></caption>
+      </thead>
+      <tbody>
+        <tr><td>High Risk</td><td>1.250<sup>***</sup> (0.041)</td></tr>
+        <tr><td>Medium Risk</td><td>0.796<sup>***</sup> (0.041)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Observations</td><td>13,344</td></tr>
+        <tr><td>R<sup>2</sup></td><td>0.068</td></tr>
+        <tr><td>Max. Possible R<sup>2</sup></td><td>0.990</td></tr>
+        <tr><td>Wald Test</td><td>954.820<sup>***</sup> (df = 2)</td></tr>
+        <tr><td>LR Test</td><td>942.824<sup>***</sup> (df = 2)</td></tr>
+        <tr><td>Score (Logrank) Test</td><td>1,054.767<sup>***</sup> (df = 2)</td></tr>
+        <tr><td style="text-align:left"><em>Note: <sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</em></td></tr>
+      </tfoot>
+    </table>
+  </figure>
+
+
+<p>We considered people in our data set to be “at risk” from the day they were given the COMPAS score until the day they committed a new offense or April 1, 2016, whichever came first. We removed people from the risk set while they were incarcerated. The independent variable in the Cox model was the COMPAS categorical risk score.</p>
+
+<p>The Cox model showed that people with high scores were 3.5 times as likely to recidivate as people in the low (scores 1 to 4) category. Northpointe’s study, found that people with high scores (scores 8 to 10) were 5.6 times as likely to recidivate. Both results indicate that the score has predictive value.</p>
+
+<p>A Kaplan Meier survival plot also shows a clear difference in recidivism rates between each COMPAS score level.</p>
+
+<figure class="default">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-480*300-9dffe5.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-900*563-9dffe5.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-900*563-9dffe5.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-900*563-9dffe5.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-480*300-9dffe5.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+<p>Overall, the Cox regression had a concordance score of 63.6 percent. That means for any randomly selected pair of defendants in the sample, the COMPAS system can accurately rank their recidivism risk 63.6 percent of the time (e.g. if one person of the pair recidivates, that pair will count as a successful match if that person also had a higher score). In its study, Northpointe reported a slightly higher concordance: 68 percent.</p>
+
+<p>Running the Cox model on the underlying risk scores - ranked 1 to 10 - rather than the low, medium and high intervals yielded a slightly higher concordance of 66.4 percent.</p>
+
+<p>Both results are lower than what Northpointe describes as a threshold for reliability. “A rule of thumb according to several recent articles is that AUCs of .70 or above typically indicate satisfactory predictive accuracy, and measures between .60 and .70 suggest low to moderate predictive accuracy,” the company says in its study.</p>
+
+<p>The COMPAS violent recidivism score had a concordance of 65.1 percent.</p>
+
+<p>The COMPAS system unevenly predicts recidivism between genders. According to Kaplan-Meier estimates, women rated high risk recidivated at a 47.5 percent rate during two years after they were scored. But men rated high risk recidivated at a much higher rate – 61.2 percent – over the same time period. This means that a high-risk woman has a much lower risk of recidivating than a high-risk man, a fact that may be overlooked by law enforcement officials interpreting the score.</p>
+
+<figure class="default">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-gender-480*194-afe773.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-gender-900*363-afe773.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-gender-900*363-afe773.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-gender-900*363-afe773.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-gender-480*194-afe773.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+<p>Northpointe does offer a custom test for women, but it is not in use in Broward County.</p>
+
+<p>The predictive accuracy of the COMPAS recidivism score was consistent between races in our study – 62.5 percent for white defendants vs. 62.3 percent for black defendants. The authors of the Northpointe study found a small difference in the concordance scores by race: 69 percent for white defendants and 67 percent for black defendants.</p>
+
+<p>Across every risk category, black defendants recidivated at higher rates.</p>
+
+<figure class="default page">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-race-480*194-75280e.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-race-900*363-75280e.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-race-900*363-75280e.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-race-900*363-75280e.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-km-survival-plot-by-race-480*194-75280e.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+
+  <figure class="inset left">
+    <table class="regression">
+      <thead>
+        <caption><strong>Risk of General Recidivism Cox Model (with Interaction Term)</strong></caption>
+      </thead>
+      <tbody>
+        <tr><td>Black</td><td>0.279<sup>***</sup> (0.061)</td></tr>
+        <tr><td>Asian</td><td>-0.777 (0.502)</td></tr>
+        <tr><td>Hispanic</td><td>-0.064 (0.097)</td></tr>
+        <tr><td>Native American</td><td>-1.255 (1.001)</td></tr>
+        <tr><td>Other</td><td>0.014 (0.110)</td></tr>
+        <tr><td>High Score</td><td>1.284<sup>***</sup> (0.084)</td></tr>
+        <tr><td>Medium Score</td><td>0.843<sup>***</sup> (0.071)</td></tr>
+        <tr><td>Black:High</td><td>-0.190<sup>*</sup> (.100, p: 0.0574)</td></tr>
+        <tr><td>Asian:High</td><td>1.316<sup>*</sup> (0.768)</td></tr>
+        <tr><td>Hispanic:High</td><td>-0.119 (0.198)</td></tr>
+        <tr><td>Native American:High</td><td>1.956<sup>*</sup> (.083)</td></tr>
+        <tr><td>Other:High</td><td>0.415 (0.259)</td></tr>
+        <tr><td>Black:Medium</td><td>-0.173<sup>*</sup> (.091, p: 0.0578)</td></tr>
+        <tr><td>Asian:Medium</td><td>0.986 (0.711)</td></tr>
+        <tr><td>Hispanic:Medium</td><td>0.065 (0.164)</td></tr>
+        <tr><td>Native American:Medium</td><td>1.390 (1.120)</td></tr>
+        <tr><td>Other:Medium</td><td>-0.334 (0.232)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Observations</td><td>13,344</td></tr>
+        <tr><td>R<sup>2</sup></td><td>0.072</td></tr>
+        <tr><td>Max. Possible R<sup>2</sup></td><td>0.990</td></tr>
+        <tr><td>Log Likelihood</td><td>-30,280.410</td></tr>
+        <tr><td>Wald Test</td><td>988.830<sup>***</sup> (df = 17)</td></tr>
+        <tr><td>LR Test</td><td>993.709<sup>***</sup> (df = 17)</td></tr>
+        <tr><td>Score (Logrank) Test</td><td>1,104.894<sup>***</sup> (df = 17)</td></tr>
+        <tr><td colspan="2"><em>Note: <sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</em></td></tr>
+      </tfoot>
+    </table>
+  </figure>
+
+
+<p>We also added a race-by-score interaction term to the Cox model. This term allowed us to consider whether the difference in recidivism between a high score and low score was different for black defendants and white defendants.</p>
+
+<p>The coefficient on high scores for black defendants is almost statistically significant (0.0574). High-risk white defendants are 3.61 times as likely to recidivate as low-risk white defendants, while high-risk black defendants are only 2.99 times as likely to recidivate as low-risk black defendants. The hazard ratios for medium-risk defendants vs. low risk defendants also are different across races: 2.32 for white defendants and 1.95 for black defendants. Because of the gap in hazard ratios, we can conclude that the score is performing differently among racial subgroups.</p>
+
+<p>We ran a similar analysis on COMPAS’s violent recidivism score, however we did not find a similar result. Here, we found that the interaction term on race and score was not significant, meaning that there is no significant difference the hazards of high and low risk black defendants and high and low risk white defendants.</p>
+
+<p>Overall, there are far fewer violent recidivists than general recidivists and there isn’t a clear difference in the hazard rates across score levels for black and white recidivists. These Kaplan Meier plots show very low rates of violent recidivism.</p>
+
+<figure class="default">
+  <span data-picture="" data-alt="">
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-violent-km-survival-plot-by-race-480*194-ad4643.png"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-violent-km-survival-plot-by-race-900*363-ad4643.png" data-media="(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-violent-km-survival-plot-by-race-900*363-ad4643.png" data-media="(min-width: 37.5em)"></span>
+<span data-src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-violent-km-survival-plot-by-race-900*363-ad4643.png" data-media="(min-width: 37.5em) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 37.5em) and (min-resolution: 124.8dpi)"></span>
+<noscript>
+<img src="https://static.propublica.org/projects/algorithmic-bias/assets/img/generated/methodology-violent-km-survival-plot-by-race-480*194-ad4643.png" alt="" />
+</noscript>
+</span>
+
+</figure>
+
+<p>Finally, we investigated whether certain types of errors – false positives and false negatives – were unevenly distributed among races. We used contingency tables to determine those relative rates following the analysis outlined in the 2006 paper from the Salvation Army.</p>
+
+<p>We removed people from our data set for whom we had less than two years of recidivism information. The remaining population was 7,214 – slightly larger than the sample in the logistic models above, because we don’t need a defendant’s case information for this analysis. As in the logistic regression analysis, we marked scores other than “low” as higher risk. The following tables show how the COMPAS recidivism score performed:</p>
+<figure class="default wide">
+  <table>
+    <tr>
+      <td>
+        <table>
+          <caption>
+            <strong>All Defendants</strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+                High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                2681
+              </td>
+              <td>
+                1282
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                1216
+              </td>
+              <td>
+                2035
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 32.35</td></tr>
+            <tr><td colspan="3">FN rate: 37.40</td></tr>
+            <tr><td colspan="3">PPV: 0.61</td></tr>
+            <tr><td colspan="3">NPV: 0.69</td></tr>
+            <tr><td colspan="3">LR+: 1.94</td></tr>
+            <tr><td colspan="3">LR-: 0.55</td></tr>
+          </tfoot>
+        </table>
+      </td>
+      <td>
+        <table>
+          <caption>
+            <strong>Black Defendants</strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+  	      High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                990
+              </td>
+              <td>
+                805
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                532
+              </td>
+              <td>
+                1369
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 44.85</td></tr>
+            <tr><td colspan="3">FN rate: 27.99</td></tr>
+            <tr><td colspan="3">PPV: 0.63</td></tr>
+            <tr><td colspan="3">NPV: 0.65</td></tr>
+            <tr><td colspan="3">LR+: 1.61</td></tr>
+            <tr><td colspan="3">LR-: 0.51</td></tr>
+          </tfoot>
+        </table>
+      </td>
+      <td>
+        <table>
+          <caption>
+            <strong>
+              White Defendants
+            </strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+                High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                1139
+              </td>
+              <td>
+                349
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                461
+              </td>
+              <td>
+                505
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 23.45</td></tr>
+            <tr><td colspan="3">FN rate: 47.72</td></tr>
+            <tr><td colspan="3">PPV: 0.59</td></tr>
+            <tr><td colspan="3">NPV: 0.71</td></tr>
+            <tr><td colspan="3">LR+: 2.23</td></tr>
+            <tr><td colspan="3">LR-: 0.62</td></tr>
+          </tfoot>
+        </table>
+      </td>
+    </tr>
+  </table>
+</figure>
+
+<p>These contingency tables reveal that the algorithm is more likely to misclassify a black defendant as higher risk than a white defendant. Black defendants who do not recidivate were nearly twice as likely to be classified by COMPAS as higher risk compared to their white counterparts (45 percent vs. 23 percent). However, black defendants who scored higher did recidivate slightly more often than white defendants (63 percent vs. 59 percent).</p>
+
+<p>The test tended to make the opposite mistake with whites, meaning that it was more likely to wrongly predict that white people would not commit additional crimes if released compared to black defendants. COMPAS under-classified white reoffenders as low risk 70.5 percent more often than black reoffenders (48 percent vs. 28 percent). The likelihood ratio for white defendants was slightly higher 2.23 than for black defendants 1.61.</p>
+
+<p>We also tested whether restricting our definition of high risk to include only COMPAS’s high score, rather than including both medium and high scores, changed the results of our analysis. In that scenario, black defendants were three times as likely as white defendants to be falsely rated at high risk (16 percent vs. 5 percent).</p>
+
+<p>We found similar results for the COMPAS violent recidivism score. As before, we calculated contingency tables based on how the score performed:</p>
+<figure class="default wide">
+  <table>
+    <tr>
+      <td>
+        <table>
+          <caption>
+            <strong>
+              All Defendants
+            </strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+                High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                4121
+              </td>
+              <td>
+                1597
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                347
+              </td>
+              <td>
+                389
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 27.93</td></tr>
+            <tr><td colspan="3">FN rate: 47.15</td></tr>
+            <tr><td colspan="3">PPV: 0.20</td></tr>
+            <tr><td colspan="3">NPV: 0.92</td></tr>
+            <tr><td colspan="3">LR+: 1.89</td></tr>
+            <tr><td colspan="3">LR-: 0.65</td></tr>
+          </tfoot>
+        </table>
+      </td>
+      <td>
+        <table>
+          <caption>
+            <strong>
+              Black defendants
+            </strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+                High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                1692
+              </td>
+              <td>
+                1043
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                170
+              </td>
+              <td>
+                273
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 38.14</td></tr>
+            <tr><td colspan="3">FN rate: 38.37</td></tr>
+            <tr><td colspan="3">PPV: 0.21</td></tr>
+            <tr><td colspan="3">NPV: 0.91</td></tr>
+            <tr><td colspan="3">LR+: 1.62</td></tr>
+            <tr><td colspan="3">LR-: 0.62</td></tr>
+          </tfoot>
+        </table>
+      </td>
+      <td>
+        <table>
+          <caption>
+            <strong>
+              White defendants
+            </strong>
+          </caption>
+          <thead>
+            <tr>
+              <td></td>
+              <td>
+                Low
+              </td>
+              <td>
+  	      High
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Survived
+              </td>
+              <td>
+                1679
+              </td>
+              <td>
+                380
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recidivated
+              </td>
+              <td>
+                129
+              </td>
+              <td>
+  	      77
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">FP rate: 18.46</td></tr>
+            <tr><td colspan="3">FN rate: 62.62</td></tr>
+            <tr><td colspan="3">PPV: 0.17</td></tr>
+            <tr><td colspan="3">NPV: 0.93</td></tr>
+            <tr><td colspan="3">LR+: 2.03</td></tr>
+            <tr><td colspan="3">LR-: 0.77</td></tr>
+          </tfoot>
+        </table>
+      </td>
+    </tr>
+  </table>
+</figure>
+
+<p>Black defendants were twice as likely as white defendants to be misclassified as a higher risk of violent recidivism, and white recidivists were misclassified as low risk 63.2 percent more often than black defendants. Black defendants who were classified as a higher risk of violent recidivism did recidivate at a slightly higher rate than white defendants (21 percent vs. 17 percent), and the likelihood ratio for white defendants was higher, 2.03, than for black defendants, 1.62.</p>
+
+<p><em>We’ve published the calculations and data for this analysis <a href="https://github.com/propublica/compas-analysis">on github</a>.</em></p>
+
+<p><a href="/article/machine-bias-risk-assessments-in-criminal-sentencing/">← Read the story</a></p>
+
+<hr />
+
+				</div><!-- end .content -->
+			</div><!-- end .wrapper -->
+			<footer>
+				<div id="article-bottom"></div>
+				
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+	<form action="//propublica.us6.list-manage.com/subscribe/post?u=ff2018a8e2&id=f74e196955" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<div id="mc_embed_signup_scroll">
+			<div class="mc-field-group">
+				<label for="mce-EMAIL">Sign up to get ProPublica’s investigations delivered to your inbox.</label>
+				<input placeholder="you@example.com" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+			</div>
+
+			<!-- UPDATE THIS FOR EACH INVESTIGATION -->
+			<div class="mc-field-group hidden">
+				<input type="checkbox" value="128" name="group[15237][128]" id="mce-group[15237]-15237-7"><label for="mce-group[15237]-15237-7">Algorithms Series</label>
+			</div>
+
+			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+				<input type="text" name="b_ff2018a8e2_f74e196955" tabindex="-1" value="">
+			</div>
+			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+			<div id="mce-responses">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>
+	  </div>
+	</form>
+</div>
+<script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='TWITTER';ftypes[3]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+			</footer>
+		</article>
+	</main><!-- end main[role="main"] -->
+
+  <footer role="contentinfo">
+  </footer><!-- end footer[role="contentinfo"] --> 
+
+</div><!-- end #page-body -->
+
+<!-- start footer scripts -->
+
+<script src="https://static.propublica.org/projects/algorithmic-bias/assets/js/main.js?2016052694713"></script>
+<!-- end footer scripts -->
+
+<!-- END EXPRESSIONENGINE BODY CONTENT -->
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9b0cb93cab","applicationID":"32644292","transactionName":"YAZRYRECWEUEBkFdW1lMclYXCllYSiZHVVJDP2dQDhNaVxEARndbWRdBWg8PU0RKF1BaUFIR","queueTime":0,"applicationTime":3296,"atts":"TEFSF1kYS0s=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
