@@ -143,7 +143,7 @@ Denn Straftaten zu verhindern ist in jeglicher Hinsicht kostengünstiger, als si
 
 \subsection{Zahlen aus Kriminalstatistiken}
  
-- Interpol, Europol, BKA, BfV, etc. für die Notwendigkeit
+- Quellen: Interpol, Europol, BKA, BfV, etc. 
 
 - hochkomplexe und umfangreiche Datenmengen, insbesondere durch Vernetzung der Ämter für innere Sicherheit
 
@@ -163,11 +163,13 @@ Identify suspects using a victim’s criminal history or other partial data (e.g
 
 Folgende Anwendungsgebiete bestehen seit Langem, Versuch durch maschinelles Lernen und vernetze Datenbanken auf große Datensätze zu übertragen (Casady, NIJ-Journal): 
 
---> Methods for predicting crime, Methods for predicting offenders, Methods for predicting perpetrators’ identities, Methods for predicting victims of crimes
+--> Methods for predicting crime,  Methods for predicting perpetrators’ identities, Methods for predicting victims of crimes
+
+-----> Methods for predicting offenders (darauf fokussieren)
 
 - Möglichkeiten, Erkenntnisse in Praxis umzusetzen? (bspw. mehr Polizeieinsatz an high-risk Orten (allgemein) oder andersartigen Polizeieinsatz (mehr spezifisch, bspw. anders/stärker bewaffnet) (Perry))
 
-- führende Software PredPol vorstellen, auch PreCobs, ESRIs ArcGIS, SPSS Modeller OpenSource-Software wie CrimeStat III
+- führende Software PredPol vorstellen, auch PreCobs, ESRIs ArcGIS, SPSS Modeller OpenSource-Software wie CrimeStat III, Compas
 
 
 
@@ -215,6 +217,8 @@ das Programm Python vorstellen (Version, auch Rechnerkapazitäten etc.)
 
 - Near-Repeat-Effekte
 
+- Compas-Algorithmus 
+
 - Nachteil: zeigen nur vergangene Verbrechen, das Predicting selbst bleibt Betrachter selbst überlassen
 
 \subsection{Neuartige Methoden des maschinellen Lernens}
@@ -224,6 +228,8 @@ das Programm Python vorstellen (Version, auch Rechnerkapazitäten etc.)
 - kein Overfit/ adaptiv/ Rückschlüsse auf einzelne Variablen durch den 'Increase in Forecasting Error/ Partial Dependence Plot' (Weglassen der Variable) möglich (Berk, 2013) 
 
 - Vergleich zu ähnlicher, früherer Methode
+
+- Verbesserung des Compas-Algorithmus möglich?
 
 \subsubsection{Konvolutionales Neuronales Netzwerk }  
 
@@ -240,7 +246,7 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 
 \subsubsection{Weitere maschinelle Lernmethoden}
 
-- Social Network Analysis, Stochastic gradient boosting (Overfit/ adaptiv), Logistische Regression (nicht adaptiv, nur zwei Outputklassen) 
+- Social Network Analysis (auch gut für Variablensuche bei Compas-Tool), Stochastic gradient boosting (Overfit/ adaptiv), Logistische Regression (nicht adaptiv, nur zwei Outputklassen) 
 
 - wichtig, dass nicht Apples mit Oranges verglichen werden (siehe Tuning-Parameter und andere Charakteristiken der einzelnen Methoden wie bspw. gute Performance bei lediglich kleinen/ großen Datensätzen)
 
@@ -272,9 +278,11 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 - Kriminaldatensätze aus Kaggle (San Francisco (878050x14; 2003-2015), Chicago (>6Mx17; 2001-2017), Baltimore (276530x14; 2012-2017), Seattle (1.5Mx18; 2010-2018), Florida)
 
 
---> welche Variablen sind typischerweise vorhanden (Zeit/ Ort/ Code/ Beschreibung/ Waffe)? Sind diese relevant? Wie ist die Datenqualität (Reliabilität, Validität, Objektivität)? Fehlen viele (data censoring), sind sie systematisch verzerrt (systematic bias)?
 
 --> welche Regionen haben starke 'open-record'-Gesetze und welche verwenden bereits 'Predictive-Tools' (Florida,  Broward County, Compas-Tool, Paper von ProPublica)
+
+--> welche Variablen sind typischerweise vorhanden (Zeit/ Ort/ Code/ Beschreibung/ Waffe)? Sind diese relevant? Wie ist die Datenqualität (Reliabilität, Validität, Objektivität)? Fehlen viele (data censoring), sind sie systematisch verzerrt (systematic bias, ja bei Compas Datensatz(Florida))?
+
 
 
 
@@ -289,7 +297,7 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 
 - typische Charakteristiken der Städte wie Einwohner/Polizisten-Verhältnis
 
-- falls möglich, Datensatz zu LA, da Vorreiterstellung
+- falls möglich, Datensatz zu Los Angeles, da Vorreiterstellung in Sachen PredPol
 
 
 \newpage
@@ -301,7 +309,7 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 
 --> Crime Rates gesunken/ Arrest Rates gestiegen/ sozialer Einfluss, bspw. Angstempfinden der Gesellschaft gesunken
 
-- sind Ergebnisse durch Empirie relevant (in absoluten Zahlen), besitzen also einen taktischen Nutzen oder wurde lediglich die Performance hochgeschraubt ohne wirklichen Mehrwert? Saisonale Schwankungen?
+- sind Ergebnisse durch Empirie relevant (in absoluten Zahlen), besitzen also einen taktischen Nutzen oder wurde lediglich die Performance hochgeschraubt ohne wirklichen Mehrwert? Gibt es saisonale Schwankungen (im Sommer mehr, da alle draußen)?
 
 --> Einschätzung, ob Einführung neuartiger Praktiken deutlichen Zuwachs mit sich bringen ggü. altbewährten Praktiken
 
@@ -327,7 +335,7 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 
 - aufpassen: Facebook-Skandal mit Cambridge Analytica
 
-- 1984, George Orwell
+- 1984, George Orwell (als Negativbeispiel)
 
 - Transparenz der Vorgänge äußerst wichtig (NIJ-Journal)
 
@@ -348,7 +356,7 @@ Hier den Vergleich zu früher ziehen, wo Kategorien u.U. händisch eingetragen w
 
 
 \subsection{Ausblick}
-- mit Mythen aufräumen, die weit verbreitet sind was Predictive Policing angeht, wie Kristall-Kugel (Perry, xix)
+- mit Mythen aufräumen, die weit verbreitet sind was Predictive Policing angeht, wie Eigenschaft einer Kristall-Kugel (Perry, xix)
 
 - wie wichtig wird der Einsatz eines Menschen überhaupt noch sein? Empfehlungen zur besseren Zusammenarbeit zwischen Mensch und Maschine (Perry, xxiii) 
 
